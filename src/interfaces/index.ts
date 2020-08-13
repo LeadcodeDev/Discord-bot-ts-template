@@ -1,4 +1,4 @@
 import ICommand from './ICommand'
-import ICore from './ICore'
+import IEvent from './IEvent'
 
-export { ICommand, ICore }
+export { ICommand, IEvent }

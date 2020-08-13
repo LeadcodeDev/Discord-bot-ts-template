@@ -1,3 +1,3 @@
-import ExampleCommand from './ExampleCommand'
+import Example from './Example'
 
-export { ExampleCommand }
+export { Example }

@@ -1,6 +1,5 @@
-import { ICore } from '../interfaces'
+// const token = 'Your bot token here'
+const token = 'NTQyMDc5OTUxODQzNzUzOTg1.XFihSw.SkTc33oBaEqC1xagVE0dE6wc52Q'
+const prefix = '!'
 
-export default class Core implements ICore {
-	token = 'Your bot token here'
-	prefix = '!'
-}
+export { token, prefix }
