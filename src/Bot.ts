@@ -1,8 +1,9 @@
-import { Client } from 'discord.js'
+import { Client, Message } from 'discord.js'
 import { ICommand, IEvent } from './interfaces'
+import { prefix } from './configurations/core'
 
 export default class Bot {
-	private commands: ICommand[] = []
+	public commands: ICommand[] = []
 	private events: IEvent[] = []
 
 	private client: Client
@@ -18,7 +19,7 @@ export default class Bot {
 	 * @param { ICommand } command
 	 * @returns { bot }
 	 */
-	registerCommand(command: ICommand): Bot {
+	public registerCommand(command: ICommand): Bot {
 		this.commands.push(command)
 		return this
 	}
@@ -28,7 +29,7 @@ export default class Bot {
 	 * @param { IEvent } event
 	 * @returns { bot }
 	 */
-	registerEvent(event: IEvent): Bot {
+	public registerEvent(event: IEvent): Bot {
 		this.events.push(event)
 		return this
 	}
@@ -36,6 +37,15 @@ export default class Bot {
 	async initialize() {
 		this.events.forEach(async ({ name, run }) => {
 			await this.client.on(name, run)
+		})
+		this.client.on('message', (message: Message) => {
+			const parts = message.content.split(' ')
+			const commandName = parts[0].replace(prefix, '')
+			const commandUsed: any = this.commands.find(
+				(c) => c.tag === commandName
+			)
+			if (commandUsed === undefined) return false
+			return commandUsed.run(message, parts.slice(1))
 		})
 		await this.client.login(this.token)
 	}

@@ -1,3 +1,3 @@
-import Ready from './Ready'
+import Ready from './ReadyEvent'
 
 export { Ready }

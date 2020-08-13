@@ -1,6 +1,6 @@
 import { IEvent } from '../interfaces'
 
-class Ready implements IEvent {
+class ReadyEvent implements IEvent {
 	public name = 'ready'
 
 	run() {
@@ -8,4 +8,4 @@ class Ready implements IEvent {
 	}
 }
 
-export default new Ready()
+export default new ReadyEvent()
