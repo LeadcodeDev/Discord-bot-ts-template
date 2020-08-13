@@ -1,0 +1,15 @@
+{
+	"name": "discord-bot-ts-template",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "tsc -w"
+	},
+	"repository": "git@github.com:LeadcodeDev/Discord-bot-ts-template.git",
+	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"discord.js": "^12.2.0",
+		"typescript": "^3.9.7"
+	}
+}
