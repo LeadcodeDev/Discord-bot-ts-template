@@ -12,7 +12,7 @@ Then create a new file, name it whatever you want. We recommend that you use the
 
 This will give you a name similar to this `FooEvent`
 
-#### Your first command
+#### Your first event
 
 Copy and paste the following code :
 
@@ -20,11 +20,12 @@ Copy and paste the following code :
 import { IEvent } from '../interfaces'
 
 class ReadyEvent implements IEvent {
-	public name = 'ready'
+	
+  public name = 'ready'
 
-	run() {
-		// Your code here
-	}
+  run() {
+	// Your code here
+  }
 }
 
 export default new ReadyEvent()
@@ -35,9 +36,28 @@ We create a class implementing the `IEvent` interface. This interface requires u
 To see all of the events available, please visit the [official discord.js documentation](https://discord.js.org/#/docs/main/stable/general/welcome)
 In the `run` function you will be able to write the logic of your event
 
-Finally, we export the class and instantiate it.
+Finally, we export the class and instantiate it and we add event in tow files.
 
+`→ App/events/index.ts`
 
-| params   | describes                             | types         | required |
-| -------- | ------------------------------------- | ------------- | -------- |
-| name     | Name of your event                  | string        | true     |
+```ts
+import Foo from './FooEvent'
+
+export { Foo }
+```
+
+`→ App/index.ts`
+
+```ts
+import { Foo } from './events'
+
+Robot
+  .registerEvent(Foo)
+  .initialize()
+```
+
+Events are built with class which implements the `IEvent` interface giving you some parameters:
+
+| params | describes          | types  | required |
+| ------ | ------------------ | ------ | -------- |
+| name   | Name of your event | string | true     |
