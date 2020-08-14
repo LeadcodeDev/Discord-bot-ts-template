@@ -1,7 +1,7 @@
 import { IEvent } from '../interfaces'
 
 class ReadyEvent implements IEvent {
-	public name = 'ready'
+	public name: string = 'ready'
 
 	run() {
 		console.log('Ready !')

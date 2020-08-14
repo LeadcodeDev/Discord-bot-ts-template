@@ -22,7 +22,8 @@ To use it refer you to the [documentation](#Guide).
 
 1. Clone the repository from `https://github.com/LeadcodeDev/Discord-bot-ts-template.git`
 2. Open a terminal in the folder
-3. Type `yarn build` then `yarn start`
+3. Type `yarn install` or `npm install`
+4. Then use `yarn build` and `yarn start`
 
 It's already finished, it's really quick to set up.
 

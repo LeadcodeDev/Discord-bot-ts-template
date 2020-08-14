@@ -8,6 +8,11 @@ class Example implements ICommand {
 	public tag = 'hello'
 	public roles = [members, administrateur]
 
+	/**
+	 *
+	 * @param { Message } message
+	 * @param { string[] } args
+	 */
 	run(message: Message, args: string[]) {
 		console.log('Hello world :)')
 	}
