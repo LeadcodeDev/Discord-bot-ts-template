@@ -1,3 +1,4 @@
 import Ready from './ReadyEvent'
+import Message from './MessageEvent'
 
-export { Ready }
+export { Ready, Message }

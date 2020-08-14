@@ -5,6 +5,5 @@ export default interface ICommand {
 	readonly describe: string
 	readonly tag: string
 	readonly roles?: Array<number>
-
 	run(message: Message, args: string[]): any
 }

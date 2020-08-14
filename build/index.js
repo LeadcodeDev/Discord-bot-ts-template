@@ -13,5 +13,7 @@ var Robot = new Bot_1.default(client, core_1.token);
 Robot
     .registerCommand(commands_1.Example)
     .registerEvent(events_1.Ready)
+    .registerEvent(events_1.Message)
     .initialize();
+exports.default = Robot;
 //# sourceMappingURL=index.js.map
