@@ -1,4 +1,4 @@
-const token = 'Your bot token here'
-const prefix = '!'
+const token: string = 'Your bot token here'
+const prefix: string = '!'
 
 export { token, prefix }
