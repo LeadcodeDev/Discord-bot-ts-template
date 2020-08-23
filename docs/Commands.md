@@ -15,23 +15,23 @@ Then create a new file, name it whatever you want.
 Copy and paste the following code :
 
 ```ts
-import { ICommand } from '../interfaces'
+import { Command } from '../interfaces'
 import { Message } from 'discord.js'
 import { firstRole, secondRole } from '../configurations/roles'
 
-class Example implements ICommand {
+class Foo implements Command {
 
   public name = 'command name'
   public describe = 'describe your command'
   public tag = 'prefix to call your command'
-  public roles = [firstRole, secondRole]
+  public roles = [firstRole, secondRole] // 👈 you can define your roles directly via their ids
 
   run(message: Message, args: string[]) {
 	// Write here your code
   }
 }
 
-export default new Example()
+export default new Foo()
 ```
 
 In the `run` function you will be able to write the logic of your event
@@ -40,18 +40,18 @@ Finally, we export the class and instantiate it and we add command in tow files.
 `→ App/commands/index.ts`
 
 ```ts
-import Example from './Example'
+import Foo from './Foo'
 
-export { Example }
+export { Foo }
 ```
 
 `→ App/index.ts`
 
 ```ts
-import { Example } from './commands'
+import { Foo } from './commands'
 
 Robot
-  .registerCommand(Example)
+  .registerCommand(Foo)
   .initialize()
 ```
 
@@ -62,4 +62,4 @@ Commands are built with class which implements the `ICommand` interface giving y
 | name     | Name of your command                  | string        | true     |
 | describe | Describe your command                 | string        | true     |
 | tag      | Used to call the command              | string        | true     |
-| roles    | Roles required to execute the command | array[number] | false    |
+| roles    | Roles required to execute the command | array[string] | true    |
