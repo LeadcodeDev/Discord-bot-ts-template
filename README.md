@@ -32,6 +32,7 @@ It's already finished, it's really quick to set up.
 -   [Commands](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Commands.md)
 -   [Events](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Events.md)
 -   [Configurations](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Configurations.md)
+-   [Middlewares](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Middleares.md)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 
