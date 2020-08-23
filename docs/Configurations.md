@@ -20,9 +20,10 @@ export { token, prefix }
 
 ##### roles.ts
 You can configure set your guild roles here
+WARN : To find roles id, please write in your discord chat '\' before your @target_role
 ```ts
-const administrateur: number = 743570615306289262
-const members: number = 743570760559493191
+const administrateur: string = '743570615306289262'
+const members: string = '743570760559493191'
 
 export { administrateur, members }
 ```
