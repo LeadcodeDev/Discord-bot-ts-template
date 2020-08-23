@@ -1,18 +1,13 @@
-import { ICommand } from '../interfaces'
+import { Command } from '../interfaces'
 import { Message } from 'discord.js'
 import { members, administrateur } from '../configurations/roles'
 
-class Example implements ICommand {
+class Example implements Command {
 	public name = 'Hello world'
 	public describe = 'Make your first command example'
 	public tag = 'hello'
 	public roles = [members, administrateur]
 
-	/**
-	 *
-	 * @param { Message } message
-	 * @param { string[] } args
-	 */
 	run(message: Message, args: string[]) {
 		console.log('Hello world :)')
 	}

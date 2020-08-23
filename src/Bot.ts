@@ -1,9 +1,11 @@
 import { Client, Message } from 'discord.js'
-import { ICommand, IEvent } from './interfaces'
+import { Command, Event } from './interfaces'
+import { Middleware } from './interfaces'
 
 export default class Bot {
-	private commands: ICommand[] = []
-	private events: IEvent[] = []
+	private commands: Array<Command> = []
+	private events: Event[] = []
+	private middlewares: Array<Middleware> = []
 	private client: Client
 	private token: string
 
@@ -17,7 +19,7 @@ export default class Bot {
 	 * @param { ICommand } command
 	 * @returns { bot }
 	 */
-	public registerCommand(command: ICommand): Bot {
+	public registerCommand(command: Command): Bot {
 		this.commands.push(command)
 		return this
 	}
@@ -27,11 +29,25 @@ export default class Bot {
 	 * @param { IEvent } event
 	 * @returns { bot }
 	 */
-	public registerEvent(event: IEvent): Bot {
+	public registerEvent(event: Event): Bot {
 		this.events.push(event)
 		return this
 	}
 
+	/**
+	 * Setup middlewares
+	 * @param { Middleware } middleware
+	 * @returns { bot }
+	 */
+	public middleware(middleware: Array<Middleware>): Bot {
+		this.middlewares = middleware
+		return this
+	}
+
+	/**
+	 * Call command list
+	 * @returns { ICommand[] }
+	 */
 	public getCommands() {
 		return this.commands
 	}
@@ -40,6 +56,11 @@ export default class Bot {
 		this.events.forEach(async ({ name, run }) => {
 			await this.client.on(name, run)
 		})
+
+		this.middlewares.forEach(async (middleware) => {
+			await middleware.run()
+		})
+
 		await this.client.login(this.token)
 	}
 }

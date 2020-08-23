@@ -1,4 +1,5 @@
-import ICommand from './ICommand'
-import IEvent from './IEvent'
+import Command from './Command'
+import Event from './Event'
+import Middleware from './Middleware'
 
-export { ICommand, IEvent }
+export { Command, Event, Middleware }

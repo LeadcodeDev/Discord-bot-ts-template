@@ -1,6 +1,9 @@
-const token: string = 'Your token'
+const token: string =
+	'NTQyMDc5OTUxODQzNzUzOTg1.XFihSw.pp9RILrLHoPXIE8VnkqsjKd2KC8'
 const prefix: string = '!'
 const name: string = 'Discord bot'
 const describe: string = 'Discord bot with typescript'
 
-export { token, prefix, name, describe }
+const logger: boolean = true
+
+export { token, prefix, name, describe, logger }
