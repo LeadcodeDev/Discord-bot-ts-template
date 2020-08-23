@@ -1,4 +1,4 @@
-# Commands
+# Middlewares
 
 #### Creating your own middleware is very easy
 
@@ -29,6 +29,7 @@ export default new Foo()
 ```
 
 Then, you can call your middleware in your file :
+
 ```ts
 import { Foo } from '.../middlewares'
 
@@ -53,14 +54,13 @@ export { Foo }
 ```ts
 import { Client } from 'discord.js'
 import Bot from './Bot'
-import { Foo } from './middlewares';
+import { Foo } from './middlewares'
 
 const client = new Client()
 const Robot = new Bot(client, token)
 
-Robot
-    .middleware([Foo]) // 👈 You can add mode middleware in this array
-    .initialize()
+Robot.middleware([Foo]) // 👈 You can add mode middleware in this array
+	.initialize()
 
 export default Robot
 ```
