@@ -17,9 +17,9 @@ This will give you a name similar to this `FooEvent`
 Copy and paste the following code :
 
 ```ts
-import { IEvent } from '../interfaces'
+import { Event } from '../interfaces'
 
-class ReadyEvent implements IEvent {
+class ReadyEvent implements Event {
 	
   public name = 'ready'
 
