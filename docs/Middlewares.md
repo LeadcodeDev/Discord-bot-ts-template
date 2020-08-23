@@ -18,11 +18,11 @@ Copy and paste the following code :
 import { Middleware } from '../interfaces'
 
 class Foo extends Middleware {
-	public async run() {
-		this.on('foo_event', (data) => {
-			// Your code here
-		})
-	}
+  public async run() {
+	this.on('foo_event', (data) => {
+	  // Your code here
+	})
+  }
 }
 
 export default new Foo()
@@ -34,8 +34,8 @@ Then, you can call your middleware in your file :
 import { Foo } from '.../middlewares'
 
 async function() {
-		await Foo.emit('foo_event', data)
-	}
+  await Foo.emit('foo_event', data)
+}
 ```
 
 In the `run` function you will be able to write the logic of your middleware
@@ -59,8 +59,9 @@ import { Foo } from './middlewares'
 const client = new Client()
 const Robot = new Bot(client, token)
 
-Robot.middleware([Foo]) // 👈 You can add mode middleware in this array
-	.initialize()
+Robot
+  .middleware([Foo]) // 👈 You can add mode middleware in this array
+  .initialize()
 
 export default Robot
 ```
