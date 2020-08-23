@@ -1,3 +1,3 @@
-import RoleMiddelware from './Guard'
+import Guard from './Guard'
 
-export { RoleMiddelware }
+export { Guard }

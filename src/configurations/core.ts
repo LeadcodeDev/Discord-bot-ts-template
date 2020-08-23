@@ -1,5 +1,4 @@
-const token: string =
-	'NTQyMDc5OTUxODQzNzUzOTg1.XFihSw.pp9RILrLHoPXIE8VnkqsjKd2KC8'
+const token: string = 'Your token'
 const prefix: string = '!'
 const name: string = 'Discord bot'
 const describe: string = 'Discord bot with typescript'

@@ -1,6 +1,6 @@
-import { IEvent } from '../interfaces'
+import { Event } from '../interfaces'
 
-class ReadyEvent implements IEvent {
+class ReadyEvent implements Event {
 	public name: string = 'ready'
 
 	run() {

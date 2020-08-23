@@ -1,10 +1,10 @@
-import { Client, Message } from 'discord.js'
+import { Client } from 'discord.js'
 import { Command, Event } from './interfaces'
 import { Middleware } from './interfaces'
 
 export default class Bot {
 	private commands: Array<Command> = []
-	private events: Event[] = []
+	private events: Array<Event> = []
 	private middlewares: Array<Middleware> = []
 	private client: Client
 	private token: string
@@ -16,7 +16,7 @@ export default class Bot {
 
 	/**
 	 * Create new command and add this to the bot
-	 * @param { ICommand } command
+	 * @param { Command } command
 	 * @returns { bot }
 	 */
 	public registerCommand(command: Command): Bot {
@@ -26,7 +26,7 @@ export default class Bot {
 
 	/**
 	 * Create new event and add this to the bot
-	 * @param { IEvent } event
+	 * @param { Event } event
 	 * @returns { bot }
 	 */
 	public registerEvent(event: Event): Bot {
@@ -46,13 +46,13 @@ export default class Bot {
 
 	/**
 	 * Call command list
-	 * @returns { ICommand[] }
+	 * @returns { Command }
 	 */
-	public getCommands() {
+	public getCommands(): Array<Command> {
 		return this.commands
 	}
 
-	async initialize() {
+	async initialize(): Promise<void> {
 		this.events.forEach(async ({ name, run }) => {
 			await this.client.on(name, run)
 		})
