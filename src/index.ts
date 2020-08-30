@@ -9,9 +9,8 @@ const client = new Client()
 const Robot = new Bot(client, token)
 
 Robot
-    .registerCommand(Example)
-    .registerEvent(Ready)
-    .registerEvent(Message)
+    .registerCommands([Example])
+    .registerEvents([Ready, Message])
     .middleware([Guard])
     .initialize()
 

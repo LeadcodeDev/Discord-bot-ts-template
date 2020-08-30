@@ -25,12 +25,36 @@ export default class Bot {
 	}
 
 	/**
+	 * Create new command array and add this to the bot
+	 * @param { Commands } commands
+	 * @returns { bot }
+	 */
+	public registerCommands(commands: Array<Command>): Bot {
+		commands.forEach((command) => {
+			this.commands.push(command)
+		})
+		return this
+	}
+
+	/**
 	 * Create new event and add this to the bot
 	 * @param { Event } event
 	 * @returns { bot }
 	 */
 	public registerEvent(event: Event): Bot {
 		this.events.push(event)
+		return this
+	}
+
+	/**
+	 * Create new event array and add this to the bot
+	 * @param { Events } event
+	 * @returns { bot }
+	 */
+	public registerEvents(events: Array<Event>): Bot {
+		events.forEach((event) => {
+			this.events.push(event)
+		})
 		return this
 	}
 
