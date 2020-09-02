@@ -1,6 +1,7 @@
 import { Client } from 'discord.js'
 import { Command, Event } from './interfaces'
 import { Middleware } from './interfaces'
+import { Logger } from './utils'
 
 export default class Bot {
 	private commands: Array<Command> = []
@@ -76,6 +77,11 @@ export default class Bot {
 		return this.commands
 	}
 
+	public logger(): Bot {
+		Logger.run()
+		return this
+	}
+
 	async initialize(): Promise<void> {
 		this.events.forEach(async ({ name, run }) => {
 			await this.client.on(name, run)
@@ -84,7 +90,6 @@ export default class Bot {
 		this.middlewares.forEach(async (middleware) => {
 			await middleware.run()
 		})
-
 		await this.client.login(this.token)
 	}
 }

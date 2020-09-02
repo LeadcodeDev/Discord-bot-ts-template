@@ -12,6 +12,7 @@ Robot
     .registerCommands([Example])
     .registerEvents([Ready, Message])
     .middleware([Guard])
+    .logger()
     .initialize()
     
 export default Robot

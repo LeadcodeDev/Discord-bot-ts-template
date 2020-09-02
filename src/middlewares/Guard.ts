@@ -1,7 +1,8 @@
-import { Middleware, Command } from '../interfaces'
+import { Middleware, Command, Types } from '../interfaces'
 import { GuildMember, Message } from 'discord.js'
 import { prefix } from '../configurations/core'
 import Robot from '..'
+import { Logger } from '../utils'
 
 class Guard extends Middleware {
 	public async run() {
@@ -16,9 +17,11 @@ class Guard extends Middleware {
 				.filter((command) => command.tag === commandName)
 				.forEach(async (command) => {
 					await message.delete()
+					await Logger.emit('logger', Types.INFO, `executed command (${command.name})`)
 					this.hasRoles(command.roles, sender)
 						? command.run(message, args.slice(1))
-						: await sender.lastMessage!.reply("Vous n'avez pas l'autorisation d'excuter cette commande.")
+						: (await sender.lastMessage!.reply("Vous n'avez pas l'autorisation d'excuter cette commande."),
+						  await Logger.emit('logger', Types.ERROR, `${message.author.tag} not allowed to execute command (${command.name})`))
 				})
 		})
 	}
