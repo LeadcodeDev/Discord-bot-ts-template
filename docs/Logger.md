@@ -1,4 +1,4 @@
-# Commands
+# Logger
 
 #### Using the logger is very easy
 
