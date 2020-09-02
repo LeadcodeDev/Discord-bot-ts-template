@@ -1,4 +1,4 @@
-import { Middleware, Command, Types } from '../interfaces'
+import { Middleware, Types } from '../interfaces'
 import { GuildMember, Message } from 'discord.js'
 import { prefix } from '../configurations/core'
 import Robot from '..'
