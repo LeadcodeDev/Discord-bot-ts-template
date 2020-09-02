@@ -4,9 +4,9 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsc -w",
-		"start": "nodemon ./build/index.js",
+		"start": "SET NODE_ENV=development && nodemon ./build/index.js",
 		"build": "tsc",
-		"production": "node ./build/index.js"
+		"production": "SET NODE_ENV=production && node ./build/index.js"
 	},
 	"repository": "git@github.com:LeadcodeDev/Discord-bot-ts-template.git",
 	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
