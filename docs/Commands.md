@@ -17,14 +17,14 @@ Copy and paste the following code :
 ```ts
 import { Command } from '../interfaces'
 import { Message } from 'discord.js'
-import { firstRole, secondRole } from '../configurations/roles'
+import { Roles } from '../utils'
 
 class Foo implements Command {
 
   public name = 'command name'
   public describe = 'describe your command'
   public tag = 'prefix to call your command'
-  public roles = [firstRole, secondRole] // 👈 you can define your roles directly via their ids
+  public roles = [Roles.ADMINISTRATUR, Roles.MEMBER] // 👈 you can define your roles directly via their ids
 
   run(message: Message, args: string[]) {
 	// Write here your code
@@ -51,7 +51,8 @@ export { Foo }
 import { Foo } from './commands'
 
 Robot
-  .registerCommand(Foo)
+  .registerCommand(Foo) // register only one command
+  .registerCommands([Foo]) // register many commands
   .initialize()
 ```
 
