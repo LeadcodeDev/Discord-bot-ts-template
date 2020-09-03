@@ -3,10 +3,10 @@ import { Message } from 'discord.js'
 import { Roles } from '../utils'
 
 class Example implements Command {
-	public name = 'Hello world'
+	public name = 'Command example'
 	public describe = 'Make your first command example'
-	public tag = 'hello'
-	public roles = [Roles.ADMINISTRATUR, Roles.MEMBER]
+	public tag = 'example'
+	public roles = [Roles.ADMINISTRATEUR, Roles.TEST]
 
 	run(message: Message, args: string[]) {
 		console.log('Hello world :)')

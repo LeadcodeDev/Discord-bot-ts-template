@@ -76,15 +76,15 @@ export default class Bot {
 	}
 
 	/**
-	 * Call command list
-	 * @returns { Command }
+	 * Call instance of client
+	 * @returns { Client }
 	 */
 	public getClient(): Client {
 		return this.client
 	}
 
 	/**
-	 * Call command list
+	 * Call events list
 	 * @returns { Event }
 	 */
 	public getEvents(): Array<Event> {
@@ -92,7 +92,7 @@ export default class Bot {
 	}
 
 	/**
-	 * Call command list
+	 * Call middleware list
 	 * @returns { Middleware }
 	 */
 	public getMiddlewares(): Array<Middleware> {
