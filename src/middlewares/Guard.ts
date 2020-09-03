@@ -1,8 +1,7 @@
 import { Middleware, Types } from '../interfaces'
 import { GuildMember, Message } from 'discord.js'
-import { prefix } from '../configurations/core'
 import Robot from '..'
-import { Logger } from '../utils'
+import { Logger, Env } from '../utils'
 
 class Guard extends Middleware {
 	public async run() {
@@ -11,7 +10,7 @@ class Guard extends Middleware {
 
 			const sender: GuildMember = member!
 			const args: string[] = content.split(' ')
-			const commandName = args[0].replace(prefix, '')
+			const commandName = args[0].replace(Env.get('CLIENT_PREFIX'), '')
 
 			Robot.getCommands()
 				.filter((command) => command.tag === commandName)

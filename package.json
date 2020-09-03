@@ -1,12 +1,12 @@
 {
 	"name": "discord-bot-ts-template",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsc -w",
-		"start": "SET NODE_ENV=development && nodemon ./build/index.js",
+		"start": "SET NODE_ENV=development && nodemon ./build/src/index.js",
 		"build": "tsc",
-		"production": "SET NODE_ENV=production && node ./build/index.js"
+		"production": "SET NODE_ENV=production && node ./build/src/index.js"
 	},
 	"repository": "git@github.com:LeadcodeDev/Discord-bot-ts-template.git",
 	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
@@ -14,6 +14,7 @@
 	"dependencies": {
 		"chalk": "^4.1.0",
 		"discord.js": "^12.2.0",
+		"dotenv": "^8.2.0",
 		"prettier": "^2.0.5",
 		"typescript": "^3.9.7"
 	},

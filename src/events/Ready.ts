@@ -1,12 +1,11 @@
 import { Event, Types } from '../interfaces'
-import { Logger } from '../utils'
-import { name } from '../configurations/core'
+import { Logger, Env } from '../utils'
 
 class ReadyEvent implements Event {
 	public name: string = 'ready'
 
 	run() {
-		Logger.emit('logger', Types.INFO, `${name} is ready`)
+		Logger.emit('logger', Types.INFO, `${Env.get('CLIENT_NAME')} is ready`)
 	}
 }
 

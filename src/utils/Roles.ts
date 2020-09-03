@@ -1,0 +1,6 @@
+enum Roles {
+	ADMINISTRATUR = '602194770084888650',
+	MEMBER = '743570760559493191',
+}
+
+export default Roles

@@ -1,18 +1,16 @@
 import { Client } from 'discord.js'
-import { Command, Event } from './interfaces'
-import { Middleware } from './interfaces'
-import { Logger } from './utils'
+import { Command, Event } from '../src/interfaces'
+import { Middleware } from '../src/interfaces'
+import Ignitor from './Ignitor'
 
 export default class Bot {
 	private commands: Array<Command> = []
 	private events: Array<Event> = []
 	private middlewares: Array<Middleware> = []
 	private client: Client
-	private token: string
 
-	constructor(client: Client, token: string) {
-		this.client = client
-		this.token = token
+	constructor() {
+		this.client = new Client()
 	}
 
 	/**
@@ -77,19 +75,31 @@ export default class Bot {
 		return this.commands
 	}
 
-	public logger(): Bot {
-		Logger.run()
-		return this
+	/**
+	 * Call command list
+	 * @returns { Command }
+	 */
+	public getClient(): Client {
+		return this.client
+	}
+
+	/**
+	 * Call command list
+	 * @returns { Event }
+	 */
+	public getEvents(): Array<Event> {
+		return this.events
+	}
+
+	/**
+	 * Call command list
+	 * @returns { Middleware }
+	 */
+	public getMiddlewares(): Array<Middleware> {
+		return this.middlewares
 	}
 
 	async initialize(): Promise<void> {
-		this.events.forEach(async ({ name, run }) => {
-			await this.client.on(name, run)
-		})
-
-		this.middlewares.forEach(async (middleware) => {
-			await middleware.run()
-		})
-		await this.client.login(this.token)
+		await new Ignitor(this)
 	}
 }

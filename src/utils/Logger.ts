@@ -1,16 +1,16 @@
 import { Middleware, Command, Types } from '../interfaces'
 import chalk from 'chalk'
 import moment from 'moment'
-import { defaultTimezone, logger } from '../configurations/core'
+import Env from './Env'
 
 class Logger extends Middleware {
 	constructor() {
 		super()
-		moment.locale(defaultTimezone)
+		moment.locale(Env.get('DEFAULT_TIMEZONE'))
 	}
 	public async run() {
 		this.on('logger', (type: Types, message: string, prod: boolean = true): void => {
-			if (logger) {
+			if (Env.get('LOGGER')) {
 				if (process.env.NODE_ENV?.trim() == 'production' && prod) {
 					this.send(type, message)
 				} else if (process.env.NODE_ENV?.trim() == 'development') {

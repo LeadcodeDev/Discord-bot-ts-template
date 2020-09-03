@@ -1,4 +1,4 @@
-import Ready from './ReadyEvent'
-import Message from './MessageEvent'
+import Ready from './Ready'
+import Message from './Message'
 
 export { Ready, Message }
