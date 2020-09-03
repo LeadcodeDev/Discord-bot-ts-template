@@ -32,7 +32,6 @@ class Help implements Command {
 		if (roles.length != 0) {
 			let element: Array<string> = []
 			roles.forEach((role) => {
-				console.log('role', role)
 				const r = message.guild!.roles.cache.get(role)!.name
 				element.push(r.charAt(0).toUpperCase() + r.slice(1))
 			})

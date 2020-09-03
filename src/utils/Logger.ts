@@ -32,19 +32,19 @@ class Logger extends Middleware {
 		let sentence: string = ''
 		switch (type) {
 			case Types.WARN:
-				sentence = `${chalk.yellow(type)}`
+				sentence = `${chalk.bold.yellow(type)}`
 				break
 			case Types.INFO:
-				sentence = `${chalk.cyan(type)}`
+				sentence = `${chalk.bold.cyan(type)}`
 				break
 			case Types.FATAL:
-				sentence = `${chalk.rgb(170, 0, 0).bold(type)}`
+				sentence = `${chalk.bold.rgb(170, 0, 0).bold(type)}`
 				break
 			case Types.ERROR:
-				sentence = `${chalk.rgb(255, 85, 85)(type)}`
+				sentence = `${chalk.bold.rgb(255, 85, 85)(type)}`
 				break
 			case Types.SUCCES:
-				sentence = `${chalk.greenBright(type)}`
+				sentence = `${chalk.bold.greenBright(type)}`
 				break
 		}
 		return sentence
