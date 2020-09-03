@@ -52,7 +52,8 @@ export { Foo }
 import { Foo } from './events'
 
 Robot
-  .registerEvent(Foo)
+  .registerEvent(Foo) // register only one event
+  .registerEvents([Foo]) // register many events
   .initialize()
 ```
 
