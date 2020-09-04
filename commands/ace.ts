@@ -11,11 +11,11 @@ if (commandName == 'make:command') {
 		makeFile(indexDir, imp, templateDir, commandDir)
 	}
 } else if (commandName == 'make:event') {
-	const templateDir = process.cwd() + '/core/template/event'
-	const indexDir = process.cwd() + '/src/events/index.ts'
-	const eventDir = process.cwd() + '/src/events'
-	const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from './${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 	if (args[0] != 'undefined') {
+		const templateDir = process.cwd() + '/core/template/event'
+		const indexDir = process.cwd() + '/src/events/index.ts'
+		const eventDir = process.cwd() + '/src/events'
+		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from './${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, eventDir, args[0])
 	}
 }
