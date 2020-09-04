@@ -8,7 +8,8 @@ Go to the commands folder of your application
 cd App/src/commands
 ```
 
-Then create a new file, name it whatever you want.
+Then create a new file, name it whatever you want or use following command in your CLI :
+`node ace make:command command_name`
 
 #### Your first command
 
@@ -36,6 +37,8 @@ export default new Foo()
 
 In the `run` function you will be able to write the logic of your event
 Finally, we export the class and instantiate it and we add command in tow files.
+
+**NOTE :** If you have using command generator, you don't need to add manualy your command in the `App/commands/index.ts`.
 
 `→ App/commands/index.ts`
 
