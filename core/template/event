@@ -1,0 +1,13 @@
+import { Message } from 'discord.js'
+import { Event } from '../interfaces'
+import { Guard } from '../middlewares'
+
+class Example implements Event {
+	public name: string = 'event'
+
+	async run(message: Message) {
+		// Your code here
+	}
+}
+
+export default new Example()
