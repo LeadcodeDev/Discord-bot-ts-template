@@ -3,9 +3,9 @@ import { Event } from '../interfaces'
 import { Guard } from '../middlewares'
 
 class Example implements Event {
-	public name: string = 'event'
+	public name: string = 'EventName'
 
-	async run(message: Message) {
+	async run() {
 		// Your code here
 	}
 }
