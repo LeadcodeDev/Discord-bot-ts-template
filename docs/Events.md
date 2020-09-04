@@ -8,7 +8,8 @@ Go to the events folder of your application
 cd App/src/events
 ```
 
-Then create a new file, name it whatever you want. We recommend that you use the `Event` suffix to properly dissociate the commands from the rest of your application.
+Then create a new file, name it whatever you want or use following command in your CLI :
+`node ace make:event event_name`
 
 This will give you a name similar to this `FooEvent`
 
@@ -37,6 +38,7 @@ To see all of the events available, please visit the [official discord.js docume
 In the `run` function you will be able to write the logic of your event
 
 Finally, we export the class and instantiate it and we add event in tow files.
+**NOTE :** If you have using command generator, you don't need to add manualy your command in the `App/events/index.ts`.
 
 `→ App/events/index.ts`
 
