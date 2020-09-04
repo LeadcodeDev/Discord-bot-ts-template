@@ -19,7 +19,7 @@ if (commandName == 'make:command') {
 function makeFile(templateDir: string, folderDir: string, eventName: string = '') {
 	fs.readFile(templateDir, 'utf8', (err, data) => {
 		const fileNameUpperCase = args[0].charAt(0).toUpperCase() + args[0].slice(1)
-		let newFile = data.replace(/Example/g, fileNameUpperCase).replace(/EventName/g, eventName.charAt(0).toLowerCase() + eventName.slice(1))
+		let newFile = data.replace(/~Example/g, fileNameUpperCase).replace(/~EventName/g, eventName.charAt(0).toLowerCase() + eventName.slice(1))
 
 		fs.access(`${folderDir}/${fileNameUpperCase}.ts`, fs.constants.F_OK, async (err) => {
 			if (err?.code == 'ENOENT') {

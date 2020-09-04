@@ -2,12 +2,12 @@ import { Message } from 'discord.js'
 import { Event } from '../interfaces'
 import { Guard } from '../middlewares'
 
-class Example implements Event {
-	public name: string = 'EventName'
+class ~Example implements Event {
+	public name: string = '~EventName'
 
 	async run() {
 		// Your code here
 	}
 }
 
-export default new Example()
+export default new ~Example()
