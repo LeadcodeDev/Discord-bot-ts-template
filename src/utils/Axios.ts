@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 class Axios {
 	configuration: AxiosRequestConfig = {}
@@ -8,7 +8,7 @@ class Axios {
 	 * @param url String
 	 * @returns Promise<AxiosResponse<any>>
 	 */
-	public async get(url: string) {
+	public async get(url: string): Promise<AxiosResponse<any>> {
 		return await axios.get(url, this.configuration)
 	}
 
@@ -18,7 +18,7 @@ class Axios {
 	 * @param data Data<any>
 	 * @returns Promise<AxiosResponse<any>>
 	 */
-	public async post(url: string, data: any) {
+	public async post(url: string, data: any): Promise<AxiosResponse<any>> {
 		return await axios.post(url, data, this.configuration)
 	}
 
@@ -28,7 +28,7 @@ class Axios {
 	 * @param data Data<any>
 	 * @returns Promise<AxiosResponse<any>>
 	 */
-	public async put(url: string, data: any) {
+	public async put(url: string, data: any): Promise<AxiosResponse<any>> {
 		return await axios.put(url, data, this.configuration)
 	}
 
@@ -37,7 +37,7 @@ class Axios {
 	 * @param url String
 	 * @returns Promise<AxiosResponse<any>>
 	 */
-	public async delete(url: string) {
+	public async delete(url: string): Promise<AxiosResponse<any>> {
 		return await axios.delete(url, this.configuration)
 	}
 }
