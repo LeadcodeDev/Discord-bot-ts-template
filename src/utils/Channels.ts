@@ -1,5 +1,3 @@
-enum Channels {
-	GENERAL = '602194770084888650',
-}
+enum Channels {}
 
 export default Channels

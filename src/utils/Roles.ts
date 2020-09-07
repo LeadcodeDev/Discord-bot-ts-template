@@ -1,6 +1,3 @@
-enum Roles {
-	ADMINISTRATEUR = '602194770084888650',
-	TEST = '601915708594454538',
-}
+enum Roles {}
 
 export default Roles
