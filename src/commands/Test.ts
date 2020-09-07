@@ -2,15 +2,15 @@ import { Command } from '../interfaces'
 import { Message } from 'discord.js'
 import { Roles } from '../utils'
 
-class ~Example implements Command {
+class Test implements Command {
 	public name = 'Command example'
 	public describe = 'Describe your command'
-	public tag = '~example'
+	public tag = 'test'
 	public roles = []
 
 	run(message: Message, args: string[]) {
-		// Your code here
+		console.log('Hello world :)')
 	}
 }
 
-export default new ~Example()
+export default new Test()
