@@ -6,7 +6,7 @@ class Example implements Command {
 	public name = 'Command example'
 	public describe = 'Make your first command example'
 	public tag = 'example'
-	public roles = [Roles.ADMINISTRATEUR, Roles.TEST]
+	public roles = []
 
 	run(message: Message, args: string[]) {
 		console.log('Hello world :)')
