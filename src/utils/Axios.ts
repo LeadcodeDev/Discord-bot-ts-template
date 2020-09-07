@@ -41,3 +41,5 @@ class Axios {
 		return await axios.delete(url, this.configuration)
 	}
 }
+
+export default new Axios()
