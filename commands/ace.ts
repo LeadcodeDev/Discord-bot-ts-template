@@ -26,7 +26,7 @@ function makeFile(indexDir: string, imp: Buffer, templateDir: string, folderDir:
 		let newFile = data
 			.replace(/~Example/g, fileNameUpperCase)
 			.replace(/~example/g, args[0].toLowerCase())
-			.replace(/~EventName/g, eventName.charAt(0).toLowerCase() + eventName.slice(1))
+			.replace(/~eventName/g, eventName.charAt(0).toLowerCase() + eventName.slice(1))
 
 		fs.access(`${folderDir}/${fileNameUpperCase}.ts`, fs.constants.F_OK, async (err) => {
 			if (err?.code == 'ENOENT') {

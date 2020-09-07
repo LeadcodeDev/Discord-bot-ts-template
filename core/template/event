@@ -3,7 +3,7 @@ import { Event } from '../interfaces'
 import { Guard } from '../middlewares'
 
 class ~Example implements Event {
-	public name: string = '~EventName'
+	public name: string = '~eventName'
 
 	async run() {
 		// Your code here
