@@ -34,6 +34,7 @@ It's already finished, it's really quick to set up.
 -   [Configurations](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Configurations.md)
 -   [Middlewares](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Middlewares.md)
 -   [Logger](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Logger.md)
+-   [Axios](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Axios.md)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 
