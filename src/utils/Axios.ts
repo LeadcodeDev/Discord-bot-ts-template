@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 class Axios {
-	configuration = {}
+	configuration: AxiosRequestConfig = {}
 
 	/**
 	 * Get collection of resources from API server
