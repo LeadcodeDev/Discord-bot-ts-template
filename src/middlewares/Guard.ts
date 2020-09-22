@@ -13,7 +13,7 @@ class Guard extends Middleware {
 			const commandName = args[0].replace(Env.get('CLIENT_PREFIX'), '')
 
 			Robot.getCommands()
-				.filter((command) => command.tag === commandName)
+				.filter((command) => command.tag === commandName || command.alias?.includes(commandName))
 				.forEach(async (command) => {
 					const { roles, name } = command
 					await message.delete()

@@ -6,6 +6,7 @@ class Example implements Command {
 	public name = 'Command example'
 	public describe = 'Make your first command example'
 	public tag = 'example'
+	public alias = ['ex']
 	public roles = []
 
 	run(message: Message, args: string[]) {

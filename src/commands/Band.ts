@@ -2,10 +2,10 @@ import { Command } from '../interfaces'
 import { Message } from 'discord.js'
 import { Roles } from '../utils'
 
-class ~Example implements Command {
+class Band implements Command {
 	public name = 'Command example'
 	public describe = 'Describe your command'
-	public tag = '~example'
+	public tag = 'band'
 	public alias = []
 	public roles = [Roles.ADMINISTRATEUR]
 
@@ -14,4 +14,4 @@ class ~Example implements Command {
 	}
 }
 
-export default new ~Example()
+export default new Band()

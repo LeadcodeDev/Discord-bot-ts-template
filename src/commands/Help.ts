@@ -1,13 +1,13 @@
 import { Message, MessageEmbed } from 'discord.js'
 import Bot from '../'
 import { Command } from '../interfaces'
-import { Env } from '../utils'
+import { Env, Roles } from '../utils'
 
 class Help implements Command {
 	public name = 'Help'
 	public describe = 'Oui'
 	public tag = 'help'
-	public roles = []
+	public roles = [Roles.ADMINISTRATEUR]
 
 	async run(message: Message, args: string[]) {
 		const embed = this.makeEmbed(message)
