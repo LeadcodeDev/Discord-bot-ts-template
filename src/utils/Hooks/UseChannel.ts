@@ -1,7 +1,7 @@
 import { TextChannel } from 'discord.js'
-import { Logger, Env } from '.'
-import Robot from '..'
-import { Types } from '../interfaces'
+import { Logger, Env } from '..'
+import Robot from '../..'
+import { Types } from '../../interfaces'
 
 /**
  *	Recovery of all channels
