@@ -1,4 +1,4 @@
-# Axios module
+# UseChannel hook
 
 #### Using hooks is very easy...
 
