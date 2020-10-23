@@ -1,16 +1,19 @@
 import { Command } from '../interfaces'
 import { Message } from 'discord.js'
-import { Roles } from '../utils'
+import { Roles, useChannel } from '../utils'
 
 class Test implements Command {
 	public name = 'Command example'
 	public describe = 'Describe your command'
 	public tag = 'test'
 	public alias = []
-	public roles = [Roles.ADMINISTRATEUR]
+	public roles = []
 
 	run(message: Message, args: string[]) {
-		// Your code here
+		const { channels } = useChannel()
+		const usemessage = channels()
+
+		console.log(usemessage)
 	}
 }
 
