@@ -5,7 +5,7 @@ class ReadyEvent implements Event {
 	public name: string = 'ready'
 
 	run() {
-		Logger.emit('logger', Types.INFO, `${Env.get('CLIENT_NAME')} is ready`)
+		Logger.send(Types.INFO, `${Env.get('CLIENT_NAME')} is ready`)
 	}
 }
 

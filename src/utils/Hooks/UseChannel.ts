@@ -42,8 +42,8 @@ function channels(truncate?: boolean): Array<any> {
  *
  * @returns Channel
  */
-function channel(id: string) {
-	if (!id) return Logger.emit('logger', Types.ERROR, `Please select channel ID`)
+async function channel(id: string) {
+	if (!id) return await Logger.send(Types.ERROR, `Please select channel ID`)
 	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
 }
 
