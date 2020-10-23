@@ -38,6 +38,9 @@ bower_components
 build/
 build/Release
 
+# Temp
+stc/commands/Test.ts
+
 # Dependency directories
 node_modules/
 jspm_packages/
