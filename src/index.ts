@@ -6,7 +6,7 @@ import Guard from './middlewares/Guard'
 const Robot = new Bot()
 
 Robot
-    .registerCommands([Example, Help, Test])
+    .registerCommands([Example, Help])
     .registerEvents([Ready, Message])
     .middleware([Guard])
     .initialize()

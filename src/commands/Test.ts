@@ -10,10 +10,12 @@ class Test implements Command {
 	public roles = []
 
 	run(message: Message, args: string[]) {
-		const { channels } = useChannel()
-		const usemessage = channels()
+		const { channels, channel } = useChannel()
+		const getChannels = channels(true)
+		const getChannel = channel()
 
-		console.log(usemessage)
+		console.log('getChannels', getChannels)
+		console.log('getChannel', getChannel)
 	}
 }
 
