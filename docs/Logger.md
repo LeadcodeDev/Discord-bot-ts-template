@@ -13,17 +13,16 @@ The `defaultTimezone` parameter allows you to define the formatting of the time 
 
 The logger is used as follows
 ```ts
-import {Logger} from '../utils'
-import {Types} from '../interfaces'
+import { Logger } from '../utils'
+import { Types } from '../interfaces'
 
 async function () {
-    await Logger.emit('logger', Types.INFO, 'Your message')
+    await Logger.send(Types.INFO, 'Your message')
 }
 ```
 The use of `async/await` keywords is not mandatory but recommended in some cases
 
 | params   | describes                             | types                               | required |
 | -------- | ------------------------------------- | ----------------------------------- | -------- |
-| event    | Name used to call logger              | string                              | true     |
 | type     | Type of log                           | [WARN, INFO, FATAL, ERROR, SUCCES'] | true     |
 | message  | Message to send                       | string                              | true     |
