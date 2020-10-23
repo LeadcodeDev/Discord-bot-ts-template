@@ -29,12 +29,19 @@ It's already finished, it's really quick to set up.
 
 ### Guide
 
+-   [Configurations](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Configurations.md)
+
+##### Components
+
 -   [Commands](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Commands.md)
 -   [Events](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Events.md)
--   [Configurations](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Configurations.md)
 -   [Middlewares](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Middlewares.md)
 -   [Logger](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Logger.md)
 -   [Axios](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Axios.md)
+
+##### Hooks
+
+-   [useChannel](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Hooks/UseChannel.md)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 

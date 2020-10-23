@@ -12,15 +12,19 @@ class Logger extends Middleware {
 		this.on('logger', (type: Types, message: string, prod: boolean = true): void => {
 			if (Env.get('LOGGER')) {
 				if (process.env.NODE_ENV?.trim() == 'production' && prod) {
-					this.send(type, message)
+					this.sendMessage(type, message)
 				} else if (process.env.NODE_ENV?.trim() == 'development') {
-					this.send(type, message)
+					this.sendMessage(type, message)
 				}
 			}
 		})
 	}
 
-	private send(type: Types, message: string): void {
+	public async send(type: Types, message: string) {
+		await this.emit('logger', type, message)
+	}
+
+	private sendMessage(type: Types, message: string): void {
 		console.log(`${chalk.rgb(190, 190, 190)(this.date())} ${this.chooseColors(type)} : ${message}`)
 	}
 
