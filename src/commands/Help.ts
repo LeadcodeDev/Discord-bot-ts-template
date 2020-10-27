@@ -9,9 +9,9 @@ class Help implements Command {
 	public tag = 'help'
 	public roles = [Roles.ADMINISTRATEUR]
 
-	async run(message: Message, args: string[]) {
-		const embed = this.makeEmbed(message)
-		await message.reply(embed)
+	async run(msg: Message, args: string[]) {
+		const embed = this.makeEmbed(msg)
+		await msg.reply(embed)
 	}
 
 	private makeEmbed(message: Message): MessageEmbed {

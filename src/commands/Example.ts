@@ -9,7 +9,7 @@ class Example implements Command {
 	public alias = ['ex']
 	public roles = []
 
-	run(message: Message, args: string[]) {
+	run(msg: Message, args: string[]) {
 		console.log('Hello world :)')
 	}
 }
