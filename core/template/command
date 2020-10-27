@@ -6,7 +6,7 @@ import { Roles } from '../utils'
 @Command({ name: 'Command example', description: 'Describe your command', tag: '~example', roles: [Roles.EXAMPLE] })
 class ~Example implements CommandInterface {
 	public async run(msg: Message, args: string[]): Promise<void> {
-		console.log('Hello world :)')
+		// Your code here
 	}
 }
 

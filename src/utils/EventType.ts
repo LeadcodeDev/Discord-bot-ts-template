@@ -1,5 +1,5 @@
 enum Events {
-	CHOOSE_AN_EVENT = 'Choose an event',
+	EXAMPLE = 'Exanple of event',
 	CHANNEL_CREATE = 'channelCreate',
 	GUILD_MEMBER_ADD = 'guildMemberAdd',
 	MESSAGE = 'message',

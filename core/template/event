@@ -2,11 +2,9 @@ import { EventInterface, Types } from '../interfaces'
 import { Logger, Env, EventType } from '../utils'
 import { Event } from './../interfaces/decorators'
 
-@Event(EventType.CHOOSE_AN_EVENT)
+@Event(EventType.EXAMPLE)
 class ~Example implements EventInterface {
-	public name: string = '~eventName'
-
-	async run() {
+	public async run(): Promise<void> {
 		// Your code here
 	}
 }
