@@ -16,7 +16,7 @@ export default class Ignitor {
 	}
 
 	private setupEvents() {
-		this.bot.getEvents().forEach(async ({ name, run }) => {
+		this.bot.getEvents().forEach(async ({ run }) => {
 			await this.bot.getClient().on(name, run)
 		})
 	}

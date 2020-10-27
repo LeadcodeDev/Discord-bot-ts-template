@@ -1,8 +1,8 @@
 import { Message } from 'discord.js'
-import { Event } from '../interfaces'
+import { EventInterface } from '../interfaces'
 import { Guard } from '../middlewares'
 
-class ReadyEvent implements Event {
+class ReadyEvent implements EventInterface {
 	public name: string = 'message'
 
 	async run(message: Message) {

@@ -1,11 +1,11 @@
 import { Client } from 'discord.js'
-import { Command, Event } from '../src/interfaces'
+import { Command, EventInterface } from '../src/interfaces'
 import { Middleware } from '../src/interfaces'
 import Ignitor from './Ignitor'
 
 export default class Bot {
 	private commands: Array<Command> = []
-	private events: Array<Event> = []
+	private events: Array<EventInterface> = []
 	private middlewares: Array<Middleware> = []
 	private client: Client
 
@@ -40,7 +40,7 @@ export default class Bot {
 	 * @param { Event } event
 	 * @returns { bot }
 	 */
-	public registerEvent(event: Event): Bot {
+	public registerEvent(event: EventInterface): Bot {
 		this.events.push(event)
 		return this
 	}
@@ -50,7 +50,7 @@ export default class Bot {
 	 * @param { Events } event
 	 * @returns { bot }
 	 */
-	public registerEvents(events: Array<Event>): Bot {
+	public registerEvents(events: Array<EventInterface>): Bot {
 		events.forEach((event) => {
 			this.events.push(event)
 		})
@@ -87,7 +87,7 @@ export default class Bot {
 	 * Call events list
 	 * @returns { Event }
 	 */
-	public getEvents(): Array<Event> {
+	public getEvents(): Array<EventInterface> {
 		return this.events
 	}
 

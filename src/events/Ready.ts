@@ -1,9 +1,9 @@
-import { Event, Types } from '../interfaces'
-import { Logger, Env } from '../utils'
+import { EventInterface, Types } from '../interfaces'
+import { Logger, Env, EventType } from '../utils'
+import { Event } from './../interfaces/decorators'
 
-class ReadyEvent implements Event {
-	public name: string = 'ready'
-
+@Event(EventType.GUILD_MEMBER_ADD)
+class ReadyEvent implements EventInterface {
 	run() {
 		Logger.send(Types.INFO, `${Env.get('CLIENT_NAME')} is ready`)
 	}

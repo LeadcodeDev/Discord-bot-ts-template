@@ -1,7 +1,7 @@
 import Command from './Command'
-import Event from './Event'
+import EventInterface from './EventInterface'
 import Middleware from './Middleware'
 import Types from './Types'
 import CoreCommands from './CoreCommands'
 
-export { Command, Event, Middleware, Types, CoreCommands }
+export { Command, EventInterface, Middleware, Types, CoreCommands }
