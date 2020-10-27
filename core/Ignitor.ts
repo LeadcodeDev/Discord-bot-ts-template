@@ -1,5 +1,6 @@
 import Bot from './Bot'
 import { Logger, Env } from '../src/utils'
+
 export default class Ignitor {
 	private bot: Bot
 
@@ -16,14 +17,10 @@ export default class Ignitor {
 	}
 
 	private setupEvents() {
-		this.bot.getEvents().forEach(async ({ run }) => {
-			await this.bot.getClient().on(name, run)
-		})
+		this.bot.getEvents().forEach(async ({ name, run }: any) => await this.bot.getClient().on(name, run))
 	}
 
 	private setupMiddlewares() {
-		this.bot.getMiddlewares().forEach(async (middleware) => {
-			await middleware.run()
-		})
+		this.bot.getMiddlewares().forEach(async (middleware) => await middleware.run())
 	}
 }

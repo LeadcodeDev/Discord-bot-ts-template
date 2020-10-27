@@ -1,8 +1,9 @@
-import { Message } from 'discord.js'
-import { Event } from '../interfaces'
-import { Guard } from '../middlewares'
+import { EventInterface, Types } from '../interfaces'
+import { Logger, Env, EventType } from '../utils'
+import { Event } from './../interfaces/decorators'
 
-class ~Example implements Event {
+@Event(EventType.CHOOSE_AN_EVENT)
+class ~Example implements EventInterface {
 	public name: string = '~eventName'
 
 	async run() {

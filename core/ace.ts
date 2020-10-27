@@ -23,6 +23,7 @@ if (commandName == 'make:command') {
 function makeFile(indexDir: string, imp: Buffer, templateDir: string, folderDir: string, eventName: string = '') {
 	fs.readFile(templateDir, 'utf8', (err, data) => {
 		const fileNameUpperCase = args[0].charAt(0).toUpperCase() + args[0].slice(1)
+		console.log('fileNameUpperCase', fileNameUpperCase)
 		let newFile = data
 			.replace(/~Example/g, fileNameUpperCase)
 			.replace(/~example/g, args[0].toLowerCase())

@@ -1,11 +1,12 @@
 import { Message } from 'discord.js'
 import { EventInterface } from '../interfaces'
 import { Guard } from '../middlewares'
+import { EventType } from '../utils'
+import { Event } from './../interfaces/decorators'
 
+@Event(EventType.MESSAGE)
 class ReadyEvent implements EventInterface {
-	public name: string = 'message'
-
-	async run(message: Message) {
+	public async run(message: Message) {
 		await Guard.emit('commandReceived', message)
 	}
 }
