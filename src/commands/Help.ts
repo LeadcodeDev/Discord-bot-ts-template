@@ -4,7 +4,7 @@ import { CommandInterface } from '../interfaces'
 import { Command } from '../interfaces/decorators'
 import { Env, Roles } from '../utils'
 
-@Command({ name: 'Help', description: 'string', tag: 'help', roles: [Roles.EXAMPLE] })
+@Command({ name: 'Help', description: 'List all registered commands', tag: 'help', roles: [Roles.EXAMPLE] })
 class Help implements CommandInterface {
 	public async run(msg: Message, args: string[]): Promise<void> {
 		await msg.reply(this.makeEmbed(msg))
