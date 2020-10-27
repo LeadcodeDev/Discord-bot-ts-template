@@ -1,26 +1,22 @@
 import { Message, MessageEmbed } from 'discord.js'
 import Bot from '../'
-import { Command } from '../interfaces'
+import { CommandInterface } from '../interfaces'
+import { Command } from '../interfaces/decorators'
 import { Env, Roles } from '../utils'
 
-class Help implements Command {
-	public name = 'Help'
-	public describe = 'Oui'
-	public tag = 'help'
-	public roles = [Roles.ADMINISTRATEUR]
-
-	async run(msg: Message, args: string[]) {
-		const embed = this.makeEmbed(msg)
-		await msg.reply(embed)
+@Command({ name: 'Help', description: 'string', tag: 'help', roles: [Roles.EXAMPLE] })
+class Help implements CommandInterface {
+	public async run(msg: Message, args: string[]): Promise<void> {
+		await msg.reply(this.makeEmbed(msg))
 	}
 
 	private makeEmbed(message: Message): MessageEmbed {
 		let embed = new MessageEmbed()
-		Bot.getCommands().forEach((command) => {
-			const { name, describe, tag, roles } = command
+		Bot.getCommands().forEach((command: any) => {
+			const { name, description, tag, roles } = command
 			embed
 				.setDescription(`Here are the commands available for the bot ${name}`)
-				.addField(`${name} (${Env.get('CLIENT_PREFIX')}${tag})`, `\n${describe}\n__Required roles :__ ${this.fetchRoles(message, roles).join(', ')}`, true)
+				.addField(`${name} (${Env.get('CLIENT_PREFIX')}${tag})`, `\n${description}\n__Required roles :__ ${this.fetchRoles(message, roles).join(', ')}`, true)
 				.setTitle('Commands list')
 				.setFooter(Bot.getClient().user!.username, Bot.getClient().user!.displayAvatarURL())
 				.setThumbnail(Bot.getClient().user!.displayAvatarURL())

@@ -1,15 +1,11 @@
-import { Command } from '../interfaces'
 import { Message } from 'discord.js'
+import { CommandInterface } from '../interfaces'
+import { Command } from '../interfaces/decorators'
 import { Roles } from '../utils'
 
-class Example implements Command {
-	public name = 'Command example'
-	public describe = 'Make your first command example'
-	public tag = 'example'
-	public alias = ['ex']
-	public roles = []
-
-	run(msg: Message, args: string[]) {
+@Command({ name: 'Example command', description: 'string', tag: 'example', roles: [Roles.EXAMPLE] })
+class Example implements CommandInterface {
+	public async run(msg: Message, args: string[]): Promise<void> {
 		console.log('Hello world :)')
 	}
 }
