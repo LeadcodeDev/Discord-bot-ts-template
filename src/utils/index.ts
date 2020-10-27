@@ -3,6 +3,6 @@ import Roles from './Roles'
 import Logger from './Logger'
 import Env from './Env'
 import Channels from './Channels'
-import useChannel from './Hooks/UseChannel'
+import useDiscord from './Hooks/UseDiscord'
 
-export { Logger, Env, Roles, Channels, Axios, useChannel }
+export { Logger, Env, Roles, Channels, Axios, useDiscord }
