@@ -47,15 +47,22 @@ async function channel(id: string) {
 	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
 }
 
-async function message(id: string) {
-	if (!id) return await Logger.send(Types.ERROR, `Please select channel ID`)
-	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
+function messages() {
+	let messagesList: Array<any> = []
+	Robot.getClient().channels.cache.forEach((channel) => {
+		if (channel instanceof TextChannel) {
+			channel.messages.cache.forEach((message) => {
+				messagesList = [...messagesList, message]
+			})
+		}
+	})
+	return messagesList
 }
 
 export default function useChannel(): any {
 	return {
 		channels,
 		channel,
-		message,
+		messages,
 	}
 }
