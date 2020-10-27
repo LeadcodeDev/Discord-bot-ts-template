@@ -41,7 +41,7 @@ It's already finished, it's really quick to set up.
 
 ##### Hooks
 
--   [useChannel](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Hooks/UseChannel.md)
+-   [useDiscord](https://github.com/LeadcodeDev/Discord-bot-ts-template/blob/master/docs/Hooks/UseDiscord.md)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 
