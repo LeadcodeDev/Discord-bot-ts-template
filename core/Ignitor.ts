@@ -1,6 +1,5 @@
+import { Env, Logger } from '../src/utils'
 import Bot from './Bot'
-import { Logger, Env } from '../src/utils'
-import { EventType } from './../src/types'
 
 export default class Ignitor {
 	private bot: Bot
@@ -11,8 +10,8 @@ export default class Ignitor {
 	}
 
 	async run() {
-		await this.setupEvents()
-		await this.setupMiddlewares()
+		this.setupEvents()
+		this.setupMiddlewares()
 		await Logger.run()
 		await this.bot.getClient().login(Env.get('CLIENT_TOKEN'))
 	}

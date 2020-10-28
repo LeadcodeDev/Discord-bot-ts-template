@@ -1,6 +1,5 @@
 import { Client } from 'discord.js'
-import { CommandInterface, EventInterface } from '../src/interfaces'
-import { Middleware } from '../src/interfaces'
+import { CommandInterface, EventInterface, Middleware } from '../src/interfaces'
 import Ignitor from './Ignitor'
 import { CommandType, EventType } from './types'
 
