@@ -2,7 +2,7 @@ import { Client } from 'discord.js'
 import { CommandInterface, EventInterface } from '../src/interfaces'
 import { Middleware } from '../src/interfaces'
 import Ignitor from './Ignitor'
-import { CommandType } from './types'
+import { CommandType, EventType } from './types'
 
 export default class Bot {
 	private commands: Array<CommandType> = []
@@ -39,7 +39,7 @@ export default class Bot {
 	 * @param { Event } event
 	 * @returns { bot }
 	 */
-	public registerEvent(event: EventInterface): Bot {
+	public registerEvent(event: EventType): Bot {
 		this.events.push(event)
 		return this
 	}

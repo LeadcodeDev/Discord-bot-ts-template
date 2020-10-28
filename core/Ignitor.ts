@@ -1,5 +1,6 @@
 import Bot from './Bot'
 import { Logger, Env } from '../src/utils'
+import { EventType } from './../src/types'
 
 export default class Ignitor {
 	private bot: Bot
