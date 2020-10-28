@@ -1,6 +1,6 @@
 import { EventInterface, Types } from '../interfaces'
 import { Logger, Env } from '../utils'
-import { EventList } from '../types
+import { EventList } from '../types'
 import { Event } from './../interfaces/decorators'
 
 @Event({ type: EventList.EXAMPLE })
