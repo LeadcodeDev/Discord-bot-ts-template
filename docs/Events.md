@@ -58,9 +58,3 @@ Robot
   .registerEvents([Foo]) // register many events
   .initialize()
 ```
-
-Events are built with class which implements the `IEvent` interface giving you some parameters:
-
-| params | describes          | types  | required |
-| ------ | ------------------ | ------ | -------- |
-| name   | Name of your event | string | true     |
