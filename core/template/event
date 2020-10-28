@@ -3,7 +3,7 @@ import { Logger, Env } from '../utils'
 import { EventList } from '../types
 import { Event } from './../interfaces/decorators'
 
-@Event(EventList.EXAMPLE)
+@Event({ type: EventList.EXAMPLE })
 class ~Example implements EventInterface {
 	public async run(): Promise<void> {
 		// Your code here

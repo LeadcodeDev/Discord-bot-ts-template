@@ -4,7 +4,7 @@ import { Guard } from '../middlewares'
 import { EventList } from '../types'
 import { Event } from './../interfaces/decorators'
 
-@Event(EventList.MESSAGE)
+@Event({ type: EventList.MESSAGE })
 class ReadyEvent implements EventInterface {
 	public async run(message: Message) {
 		await Guard.protect(message)
