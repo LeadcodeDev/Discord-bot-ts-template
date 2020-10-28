@@ -1,7 +1,8 @@
-import { Middleware, Command, Types } from '../interfaces'
+import { Middleware } from '../interfaces'
 import chalk from 'chalk'
 import moment from 'moment'
 import Env from './Env'
+import { LoggerType } from '../types'
 
 class Logger extends Middleware {
 	constructor() {
@@ -9,7 +10,7 @@ class Logger extends Middleware {
 		moment.locale(Env.get('DEFAULT_TIMEZONE'))
 	}
 	public async run() {
-		this.on('logger', (type: Types, message: string, prod: boolean = true): void => {
+		this.on('logger', (type: LoggerType, message: string, prod: boolean = true): void => {
 			if (Env.get('LOGGER')) {
 				if (process.env.NODE_ENV?.trim() == 'production' && prod) {
 					this.sendMessage(type, message)
@@ -20,11 +21,11 @@ class Logger extends Middleware {
 		})
 	}
 
-	public async send(type: Types, message: string) {
+	public async send(type: LoggerType, message: string) {
 		await this.emit('logger', type, message)
 	}
 
-	private sendMessage(type: Types, message: string): void {
+	private sendMessage(type: LoggerType, message: string): void {
 		console.log(`${chalk.rgb(190, 190, 190)(this.date())} ${this.chooseColors(type)} : ${message}`)
 	}
 
@@ -32,22 +33,22 @@ class Logger extends Middleware {
 		return `[${moment().format('DD/MM/YYYY hh:mm:ss')}]`
 	}
 
-	private chooseColors(type: Types): string {
+	private chooseColors(type: LoggerType): string {
 		let sentence: string = ''
 		switch (type) {
-			case Types.WARN:
+			case LoggerType.WARN:
 				sentence = `${chalk.bold.yellow(type)}`
 				break
-			case Types.INFO:
+			case LoggerType.INFO:
 				sentence = `${chalk.bold.cyan(type)}`
 				break
-			case Types.FATAL:
+			case LoggerType.FATAL:
 				sentence = `${chalk.bold.rgb(170, 0, 0).bold(type)}`
 				break
-			case Types.ERROR:
+			case LoggerType.ERROR:
 				sentence = `${chalk.bold.rgb(255, 85, 85)(type)}`
 				break
-			case Types.SUCCES:
+			case LoggerType.SUCCES:
 				sentence = `${chalk.bold.greenBright(type)}`
 				break
 		}

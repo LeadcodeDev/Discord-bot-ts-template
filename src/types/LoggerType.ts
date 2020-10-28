@@ -1,4 +1,4 @@
-enum Types {
+enum LoggerType {
 	WARN = 'Warning',
 	INFO = 'Info',
 	FATAL = 'Fatal error',
@@ -6,4 +6,4 @@ enum Types {
 	SUCCES = 'Succès',
 }
 
-export default Types
+export default LoggerType

@@ -1,7 +1,7 @@
 import { TextChannel } from 'discord.js'
 import { Logger, Env } from '..'
 import Robot from '../..'
-import { Types } from '../../interfaces'
+import { LoggerType } from '../../types'
 
 /**
  *	Recovery of all channels
@@ -43,7 +43,7 @@ function channels(truncate?: boolean): Array<any> {
  * @returns Channel
  */
 async function channel(id: string) {
-	if (!id) return await Logger.send(Types.ERROR, `Please select channel ID`)
+	if (!id) return await Logger.send(LoggerType.ERROR, `Please select channel ID`)
 	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
 }
 
