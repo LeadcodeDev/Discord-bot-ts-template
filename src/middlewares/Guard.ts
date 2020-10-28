@@ -34,6 +34,10 @@ class Guard extends Middleware {
 		})
 	}
 
+	public async protect(message: Message) {
+		await this.emit('commandReceived', message)
+	}
+
 	private hasRoles(roles: Array<string>, sender: GuildMember): boolean {
 		let bool: boolean = false
 		if (sender.roles.cache.size > 1) {

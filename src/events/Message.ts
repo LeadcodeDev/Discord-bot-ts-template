@@ -7,7 +7,7 @@ import { Event } from './../interfaces/decorators'
 @Event(EventType.MESSAGE)
 class ReadyEvent implements EventInterface {
 	public async run(message: Message) {
-		await Guard.emit('commandReceived', message)
+		await Guard.protect(message)
 	}
 }
 
