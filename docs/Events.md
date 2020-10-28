@@ -18,17 +18,17 @@ This will give you a name similar to this `FooEvent`
 Copy and paste the following code :
 
 ```ts
-import { Event } from '../interfaces'
+import { EventInterface } from '../interfaces'
+import { LoggerType } from '../types'
+import { Logger, Env, EventType } from '../utils'
+import { Event } from './../interfaces/decorators'
 
-class ReadyEvent implements Event {
-	
-  public name = 'ready'
-
-  run() {
-	// Your code here
-  }
+@Event(EventType.READY) 👈 // Select your event here
+class ReadyEvent implements EventInterface {
+	public async run() {
+		Logger.send(LoggerType.INFO, `${Env.get('CLIENT_NAME')} is ready`)
+	}
 }
-
 export default new ReadyEvent()
 ```
 
