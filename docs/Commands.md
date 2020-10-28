@@ -54,12 +54,3 @@ Robot
   .registerCommands([Foo]) // register many commands
   .initialize()
 ```
-
-Commands are built with class which implements the `ICommand` interface giving you some parameters:
-
-| params   | describes                             | types         | required |
-| -------- | ------------------------------------- | ------------- | -------- |
-| name     | Name of your command                  | string        | true     |
-| describe | Describe your command                 | string        | true     |
-| tag      | Used to call the command              | string        | true     |
-| roles    | Roles required to execute the command | array[string] | true    |
