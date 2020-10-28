@@ -1,10 +1,10 @@
 import { Message } from 'discord.js'
 import { EventInterface } from '../interfaces'
 import { Guard } from '../middlewares'
-import { EventType } from '../utils'
+import { EventList } from '../types'
 import { Event } from './../interfaces/decorators'
 
-@Event(EventType.MESSAGE)
+@Event(EventList.MESSAGE)
 class ReadyEvent implements EventInterface {
 	public async run(message: Message) {
 		await Guard.protect(message)

@@ -1,6 +1,6 @@
-import { EventType } from '../../utils'
+import { EventList } from '../../types'
 
-export default function Event(eventName: EventType) {
+export default function Event(eventName: EventList) {
 	return function (constructor: Function) {
 		constructor.prototype.name = eventName
 	}

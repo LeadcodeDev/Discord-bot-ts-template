@@ -1,4 +1,4 @@
-import { EventType, Roles } from '../../utils'
+import { Roles } from '../../utils'
 
 type Context = {
 	name: string
