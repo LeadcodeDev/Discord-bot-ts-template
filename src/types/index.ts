@@ -1,2 +1,4 @@
 import LoggerType from './LoggerType'
-export { LoggerType }
+import CommandType from './CommandType'
+
+export { LoggerType, CommandType }

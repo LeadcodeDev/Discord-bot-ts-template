@@ -2,7 +2,7 @@ import { Middleware } from '../interfaces'
 import { GuildMember, Message } from 'discord.js'
 import Robot from '..'
 import { Logger, Env } from '../utils'
-import { LoggerType } from '../types'
+import { CommandType, LoggerType } from '../types'
 
 class Guard extends Middleware {
 	public async run() {
@@ -14,12 +14,12 @@ class Guard extends Middleware {
 			const commandName = args[0].replace(Env.get('CLIENT_PREFIX'), '')
 
 			Robot.getCommands()
-				.filter((command) => command.tag === commandName || command.alias?.includes(commandName))
-				.forEach(async (command) => {
+				.filter((command: CommandType) => command.tag === commandName || command.alias?.includes(commandName))
+				.forEach(async (command: CommandType) => {
 					const { roles, name } = command
 					await message.delete()
-					if (roles.length != 0) {
-						if (this.hasRoles(roles, sender)) {
+					if (roles?.length != 0) {
+						if (this.hasRoles(roles!, sender)) {
 							await command.run(message, args.slice(1))
 							await Logger.emit('logger', LoggerType.INFO, `${author.tag} execute command (${name})`, false)
 						} else {
