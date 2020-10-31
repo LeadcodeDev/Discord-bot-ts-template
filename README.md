@@ -8,15 +8,17 @@ description: >-
 
 See our documentation [here](https://leadcodedev.gitbook.io/discord-bot-ts-template/)
 
-{% page-ref page="docs/guide-1/configurations.md" %}
+{% page-ref page="docs/guide/environment.md" %}
 
-{% page-ref page="docs/guide-1/events.md" %}
+{% page-ref page="docs/guide/events.md" %}
 
-{% page-ref page="docs/guide-1/commands.md" %}
+{% page-ref page="docs/guide/commands.md" %}
 
-{% page-ref page="docs/guide-1/middlewares.md" %}
+{% page-ref page="docs/guide/middlewares.md" %}
 
-{% page-ref page="docs/guide-1/hooks/usediscord.md" %}
+{% page-ref page="docs/guide/hooks/" %}
+
+
 
 
 

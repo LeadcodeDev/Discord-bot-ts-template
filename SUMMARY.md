@@ -4,15 +4,15 @@
 
 ## docs
 
-* [Guide](docs/guide-1/README.md)
-  * [Logger](docs/guide-1/logger.md)
-  * [Axios module](docs/guide-1/axios.md)
-  * [Commands](docs/guide-1/commands.md)
-  * [Hooks](docs/guide-1/hooks/README.md)
-    * [UseDiscord](docs/guide-1/hooks/usediscord.md)
-  * [Environment](docs/guide-1/configurations.md)
-  * [Events](docs/guide-1/events.md)
-  * [Middlewares](docs/guide-1/middlewares.md)
+* [Guide](docs/guide/README.md)
+  * [Logger](docs/guide/logger.md)
+  * [Axios module](docs/guide/axios-module.md)
+  * [Commands](docs/guide/commands.md)
+  * [Hooks](docs/guide/hooks/README.md)
+    * [UseDiscord](docs/guide/hooks/usediscord.md)
+  * [Environment](docs/guide/environment.md)
+  * [Events](docs/guide/events.md)
+  * [Middlewares](docs/guide/middlewares.md)
 * [References](docs/references/README.md)
   * [Events](docs/references/events.md)
 
