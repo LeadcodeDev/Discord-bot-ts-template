@@ -10,13 +10,9 @@ description: >-
 
 Becoming a super hero is a fairly straight forward process:
 
-{% tabs %}
-{% tab title="COMMAND" %}
-```
+```typescript
 node ace make:command foo
 ```
-{% endtab %}
-{% endtabs %}
 
 One file will be created and another will be altered.
 
