@@ -1,6 +1,8 @@
-# Commands
+---
+description: Creating your own command is very easy
+---
 
-## Creating your own command is very easy
+# Commands
 
 You can create your command from our CLI
 
@@ -30,18 +32,19 @@ export default new Foo()
 
 In the `run` function you will be able to write the logic of your event Finally, we export the class and instantiate it and we add command in tow files.
 
-**NOTE :** If you have using command generator, you don't need to add manualy your command in the `App/commands/index.ts`.
+{% hint style="warning" %}
+**NOTE :** Don't forget to add your command in your bot instance
+{% endhint %}
 
-`→ App/src/commands/index.ts`
-
+{% code title="App/src/commands/index.ts" %}
 ```typescript
 import Foo from './Foo'
 
 export { Foo }
 ```
+{% endcode %}
 
-`→ App/src/index.ts`
-
+{% code title="App/src/index.ts" %}
 ```typescript
 import { Foo } from './commands'
 
@@ -50,4 +53,5 @@ Robot
   .registerCommands([Foo]) // register many commands
   .initialize()
 ```
+{% endcode %}
 

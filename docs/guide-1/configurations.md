@@ -4,30 +4,25 @@
 
 Go to the configurations folder of your application
 
-```text
-cd App/.env
-```
-
-You have 3 files:
-
-### .env
+### Environment file
 
 You can configure your secret token and the prefor of your bot
 
-```text
+{% code title="App/.env" %}
+```yaml
 CLIENT_TOKEN=your token
 CLIENT_PREFIX=your prefix
 CLIENT_NAME=name of your bot
 CLIENT_DESCRIPTION=description of your bot
 
-DEFAULT_TIMEZONE=your timezone #
+DEFAULT_TIMEZONE=your timezone
 LOGGER=true # or false
 ```
+{% endcode %}
 
 ### Roles.ts
 
-You can configure set your guild roles here WARN : To find roles id, please write in your discord chat '\' before your @target\_role
-
+{% code title="App/src/utils/Roles.ts" %}
 ```typescript
 enum Roles {
   // ROLE_NAME = '602194770084888650',
@@ -35,11 +30,15 @@ enum Roles {
 
 export default Roles
 ```
+{% endcode %}
 
-### Channels.ts
+{% hint style="info" %}
+To find roles id, please write in your discord chat `@\target_role`
+{% endhint %}
 
-You can configure set your guild channels here WARN : To find roles id, please rught click in the channels bar and select 'copy'
+### Channels
 
+{% code title="App/src/utils/Channels.ts" %}
 ```typescript
 enum Channels {
   // CHANNEL_NAME = '602194770084888650',
@@ -47,4 +46,9 @@ enum Channels {
 
 export default Channels
 ```
+{% endcode %}
+
+{% hint style="info" %}
+To find channel id, please right click in our channel \(see more [here](https://support.discord.com/hc/fr/articles/206346498-O%C3%B9-trouver-l-ID-de-mon-compte-utilisateur-serveur-message-)\)
+{% endhint %}
 
