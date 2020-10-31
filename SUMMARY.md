@@ -10,3 +10,7 @@
 * [Events](guide/events.md)
 * [Logger](guide/logger.md)
 
+## API
+
+* [Events](api/events.md)
+
