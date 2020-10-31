@@ -1,15 +1,18 @@
 # Table of contents
 
 * [Discord-bot-ts-template](README.md)
-* [Guide](guide-1/README.md)
-  * [Logger](guide-1/logger.md)
-  * [Axios module](guide-1/axios.md)
-  * [Commands](guide-1/commands.md)
-  * [Hooks](guide-1/hooks/README.md)
-    * [UseDiscord hook](guide-1/hooks/usediscord.md)
-  * [Configurations](guide-1/configurations.md)
-  * [Events](guide-1/events.md)
-  * [Middlewares](guide-1/middlewares.md)
-* [Rreferences](references/README.md)
-  * [Events](references/events.md)
+
+## docs
+
+* [Guide](docs/guide-1/README.md)
+  * [Logger](docs/guide-1/logger.md)
+  * [Axios module](docs/guide-1/axios.md)
+  * [Commands](docs/guide-1/commands.md)
+  * [Hooks](docs/guide-1/hooks/README.md)
+    * [UseDiscord hook](docs/guide-1/hooks/usediscord.md)
+  * [Environment](docs/guide-1/configurations.md)
+  * [Events](docs/guide-1/events.md)
+  * [Middlewares](docs/guide-1/middlewares.md)
+* [References](docs/references/README.md)
+  * [Events](docs/references/events.md)
 
