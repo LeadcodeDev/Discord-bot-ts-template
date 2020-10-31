@@ -10,12 +10,6 @@
   * [Configurations](guide-1/configurations.md)
   * [Events](guide-1/events.md)
   * [Middlewares](guide-1/middlewares.md)
-* [guide](guide/README.md)
-  * [Logger](guide/logger.md)
-  * [Setup your project](guide/setup-your-project.md)
-  * [Commands](guide/commands.md)
-  * [Environment](guide/untitled.md)
-  * [Events](guide/events.md)
 * [references](references/README.md)
   * [Events](references/events.md)
 
