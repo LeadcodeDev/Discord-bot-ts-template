@@ -4,7 +4,7 @@
 
 You can configure axios options in the following file
 
-```text
+```bash
 cd App/src/utils/Axios.ts
 ```
 
@@ -19,8 +19,9 @@ To use our module, you shoud to import the module like example :
 ```typescript
 import { Axios } from '../utils'
 
-async  function() {
+async function() {
     const { data } = await Axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    
     console.log(data)
     // output : { userId: 1, id: 1, title: 'delectus aut autem', completed: false }
 }

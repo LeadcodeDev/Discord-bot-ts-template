@@ -1,10 +1,12 @@
-# Middlewares
+---
+description: Creating your own middleware is very easy
+---
 
-## Creating your own middleware is very easy
+# Middlewares
 
 Go to the middlewares folder of your application
 
-```text
+```bash
 cd App/src/middlewares
 ```
 

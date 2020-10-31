@@ -12,7 +12,9 @@ import { useDiscord } from '../utils'
 
 const { channels } = useDiscord()
 const MyChannels = channels(true) // Default to false, show truncate return
-// Return my channels from discord guild console.log(MyChannels)
+
+// Return my channels from discord guild
+console.log(MyChannels)
 ```
 
 Get specific channel by ID
