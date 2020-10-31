@@ -7,3 +7,7 @@
 * [Setup your project](guide/setup-your-project.md)
 * [Environment](guide/untitled.md)
 
+---
+
+* [Commands](commands.md)
+
