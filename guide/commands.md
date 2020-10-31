@@ -23,9 +23,9 @@ import { Roles } from '../utils'
 
 @Command({ name: 'Example command', description: 'Example of command', tag: 'foo', roles: [Roles.EXAMPLE] })
 class Foo implements CommandInterface {
-	public async run(msg: Message, args: string[]): Promise<void> {
-		// Your code here
-	}
+    public async run(msg: Message, args: string[]): Promise<void> {
+        // Your code here
+    }
 }
 
 export default new Foo()
@@ -62,7 +62,7 @@ Robot
     .registerEvents([Ready, Message])
     .middleware([Guard])
     .initialize()
-    
+
 export default Robot
 ```
 {% endcode %}

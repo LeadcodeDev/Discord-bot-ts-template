@@ -30,11 +30,9 @@ yarn install
 {% endtab %}
 
 {% tab title="NPM" %}
-```
+```text
 npm install
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

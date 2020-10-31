@@ -29,5 +29,3 @@ await Logger.send(Types.INFO, 'Your message')
 ```
 {% endcode %}
 
-
-

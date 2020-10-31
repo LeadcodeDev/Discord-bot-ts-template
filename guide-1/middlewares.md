@@ -1,27 +1,27 @@
 # Middlewares
 
-#### Creating your own middleware is very easy
+## Creating your own middleware is very easy
 
 Go to the middlewares folder of your application
 
-```
+```text
 cd App/src/middlewares
 ```
 
 Then create a new file, name it whatever you want.
 
-#### Your first middleware
+## Your first middleware
 
 Copy and paste the following code :
 
-```ts
+```typescript
 import { Middleware } from '../interfaces'
 
 class Foo extends Middleware {
   public async run() {
-	this.on('foo_event', (data) => {
-	  // Your code here
-	})
+    this.on('foo_event', (data) => {
+      // Your code here
+    })
   }
 }
 
@@ -30,7 +30,7 @@ export default new Foo()
 
 Then, you can call your middleware in your file :
 
-```ts
+```typescript
 import { Foo } from '.../middlewares'
 
 async function() {
@@ -38,12 +38,11 @@ async function() {
 }
 ```
 
-In the `run` function you will be able to write the logic of your middleware
-Finally, we export the class and instantiate it and we add command in tow files.
+In the `run` function you will be able to write the logic of your middleware Finally, we export the class and instantiate it and we add command in tow files.
 
 `→ App/middlewares/index.ts`
 
-```ts
+```typescript
 import Foo from './Foo'
 
 export { Foo }
@@ -51,7 +50,7 @@ export { Foo }
 
 `→ App/index.ts`
 
-```ts
+```typescript
 import { Client } from 'discord.js'
 import Bot from './Bot'
 import { Foo } from './middlewares'
@@ -65,3 +64,4 @@ Robot
 
 export default Robot
 ```
+

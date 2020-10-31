@@ -1,21 +1,22 @@
 # Axios module
 
-#### Using asynchronous request is very easy with Axios
+## Using asynchronous request is very easy with Axios
 
 You can configure axios options in the following file
 
-```
+```text
 cd App/src/utils/Axios.ts
 ```
 
-```ts
+```typescript
 configuration: AxiosRequestConfig = {
     // Your options
 }
 ```
 
 To use our module, you shoud to import the module like example :
-```ts
+
+```typescript
 import { Axios } from '../utils'
 
 async  function() {
@@ -27,8 +28,9 @@ async  function() {
 
 Axios required an custom configuration and certains params
 
-| params           | describes                             | types         |
-| ---------------- | ------------------------------------- | ------------- |
-| url              | Your API url                          | string        |
-| data             | Data to cerate or update              | string        |
-| configuration    | Configuration of axios module         | JSON          |
+| params | describes | types |
+| :--- | :--- | :--- |
+| url | Your API url | string |
+| data | Data to cerate or update | string |
+| configuration | Configuration of axios module | JSON |
+
