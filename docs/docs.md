@@ -1,6 +1,6 @@
 # README
 
-{% page-ref page="readme.md" %}
+{% page-ref page="docs.md" %}
 
 {% page-ref page="guide/environment.md" %}
 

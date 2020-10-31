@@ -22,7 +22,7 @@ import { LoggerType, EventList } from '../types'
 import { Logger, Env } from '../utils'
 import { Event } from './../interfaces/decorators'
 
-@Event(EventList.READY) 👈 // Select your event here
+@Event({ type: EventList.MESSAGE }) 👈 // Select your event here
 class ReadyEvent implements EventInterface {
     public async run() {
         // Your code here
