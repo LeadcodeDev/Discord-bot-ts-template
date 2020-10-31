@@ -8,4 +8,5 @@
 * [Environment](guide/untitled.md)
 * [Commands](guide/commands.md)
 * [Events](guide/events.md)
+* [Logger](guide/logger.md)
 
