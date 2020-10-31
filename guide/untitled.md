@@ -4,7 +4,7 @@ description: You can configure your project in App/.env
 
 # Environment
 
-## Getting Super Powers
+## Environement configurations
 
 {% code title=".env" %}
 ```text
@@ -18,5 +18,25 @@ LOGGER=true # or false
 ```
 {% endcode %}
 
+### Roles configurations
 
+```typescript
+enum Roles {
+  ROLE_MEMBER = '601915708594454538',
+  ROLE_ADMINISTRATEUR = '602194770084888650'
+}
+
+export default Roles
+```
+
+### Channels configurations
+
+```typescript
+enum Channels {
+  CHANNEL_WELCOME = '583050048766476355'
+  CHANNEL_GENERAL = '756945714939953242'
+}
+
+export default Channels
+```
 
