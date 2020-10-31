@@ -34,5 +34,9 @@ export default new Foo()
 ```
 {% endcode %}
 
+{% hint style="info" %}
+Your newly created file is automatically added to the index.ts of the App/src/commands document.
+{% endhint %}
+
 
 
