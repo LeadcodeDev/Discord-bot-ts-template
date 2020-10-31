@@ -2,7 +2,7 @@
 
 ## Using hooks is very easy...
 
-#### List all channels of guild :
+### List all channels of guild :
 
 Get all channels
 
@@ -31,7 +31,7 @@ const MyChannel = channel('583050048766476355')
 console.log(MyChannel)
 ```
 
-#### List all messages registered in the guild :
+### List all messages registered in the guild :
 
 ```typescript
 // Import hook here
