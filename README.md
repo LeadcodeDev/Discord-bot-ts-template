@@ -4,9 +4,7 @@ description: >-
   OOP and in a secure way thanks to the implementation of Typescript.
 ---
 
-# Discord typescript bot template
-
-### Summary
+# Summary
 
 {% page-ref page="guide/setup-your-project.md" %}
 
