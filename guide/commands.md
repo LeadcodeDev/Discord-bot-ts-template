@@ -8,8 +8,6 @@ description: >-
 
 ## Create your own command
 
-Becoming a super hero is a fairly straight forward process:
-
 ```typescript
 node ace make:command foo
 ```
