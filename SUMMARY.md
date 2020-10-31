@@ -6,7 +6,7 @@
 
 * [Guide](docs/guide/README.md)
   * [Logger](docs/guide/logger.md)
-  * [Axios module](docs/guide/axios-module.md)
+  * [Axios](docs/guide/axios-module.md)
   * [Commands](docs/guide/commands.md)
   * [Hooks](docs/guide/hooks/README.md)
     * [UseDiscord](docs/guide/hooks/usediscord.md)
