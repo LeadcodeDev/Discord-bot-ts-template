@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Summary](README.md)
+* [README](README.md)
 
 ## Guide
 
@@ -10,7 +10,7 @@
 * [Events](guide/events.md)
 * [Logger](guide/logger.md)
 
-## API
+## References
 
-* [Events](api/events.md)
+* [Events](references/events.md)
 
