@@ -21,7 +21,7 @@ import { Axios } from '../utils'
 
 async function() {
     const { data } = await Axios.get('https://jsonplaceholder.typicode.com/todos/1')
-    
+
     console.log(data)
     // output : { userId: 1, id: 1, title: 'delectus aut autem', completed: false }
 }
