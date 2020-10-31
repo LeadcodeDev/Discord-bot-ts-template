@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Discord-bot-ts-template](README.md)
+* [Discord bot ts template](README.md)
 
 ## docs
 
