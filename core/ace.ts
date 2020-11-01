@@ -10,11 +10,22 @@ if (commandName == 'make:command') {
 		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from './${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, commandDir)
 	}
-} else if (commandName == 'make:event') {
+}
+
+if (commandName == 'make:event') {
 	if (args[0] != 'undefined') {
 		const templateDir = process.cwd() + '/core/template/event'
 		const indexDir = process.cwd() + '/src/events/index.ts'
 		const eventDir = process.cwd() + '/src/events'
+		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from './${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
+		makeFile(indexDir, imp, templateDir, eventDir, args[0])
+	}
+}
+if (commandName == 'make:middleware') {
+	if (args[0] != 'undefined') {
+		const templateDir = process.cwd() + '/core/template/middleware'
+		const indexDir = process.cwd() + '/src/middlewares/index.ts'
+		const eventDir = process.cwd() + '/src/middlewares'
 		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from './${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, eventDir, args[0])
 	}
