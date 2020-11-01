@@ -7,7 +7,7 @@ import { Event } from './../interfaces/decorators'
 @Event({ type: EventList.READY })
 class ReadyEvent implements EventInterface {
 	public async run() {
-		Logger.send(LoggerType.INFO, `${Env.get('CLIENT_NAME')} is ready`)
+		await Logger.send(LoggerType.INFO, `${Env.get('CLIENT_NAME')} is ready`)
 	}
 }
 export default new ReadyEvent()

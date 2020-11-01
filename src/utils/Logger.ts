@@ -1,28 +1,23 @@
-import { MiddlewareInterface } from '../interfaces'
 import chalk from 'chalk'
 import moment from 'moment'
-import Env from './Env'
+import { MiddlewareInterface } from '../interfaces'
+import { Middleware } from '../interfaces/decorators'
 import { LoggerType } from '../types'
+import Env from './Env'
 
-class Logger extends MiddlewareInterface {
+@Middleware({ name: 'Logger' })
+class Logger {
 	constructor() {
-		super()
 		moment.locale(Env.get('DEFAULT_TIMEZONE'))
 	}
-	public async run() {
-		this.on('logger', (type: LoggerType, message: string, prod: boolean = true): void => {
-			if (Env.get('LOGGER')) {
-				if (process.env.NODE_ENV?.trim() == 'production' && prod) {
-					this.sendMessage(type, message)
-				} else if (process.env.NODE_ENV?.trim() == 'development') {
-					this.sendMessage(type, message)
-				}
+	public async send(type: LoggerType, message: string, prod: boolean = true): Promise<void> {
+		if (Env.get('LOGGER')) {
+			if (process.env.NODE_ENV?.trim() == 'production' && prod) {
+				this.sendMessage(type, message)
+			} else if (process.env.NODE_ENV?.trim() == 'development') {
+				this.sendMessage(type, message)
 			}
-		})
-	}
-
-	public async send(type: LoggerType, message: string) {
-		await this.emit('logger', type, message)
+		}
 	}
 
 	private sendMessage(type: LoggerType, message: string): void {
