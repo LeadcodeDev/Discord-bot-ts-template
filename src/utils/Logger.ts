@@ -1,10 +1,10 @@
-import { Middleware } from '../interfaces'
+import { MiddlewareInterface } from '../interfaces'
 import chalk from 'chalk'
 import moment from 'moment'
 import Env from './Env'
 import { LoggerType } from '../types'
 
-class Logger extends Middleware {
+class Logger extends MiddlewareInterface {
 	constructor() {
 		super()
 		moment.locale(Env.get('DEFAULT_TIMEZONE'))

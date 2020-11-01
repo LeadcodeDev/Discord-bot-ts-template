@@ -1,41 +1,37 @@
-import { Middleware } from '../interfaces'
 import { GuildMember, Message } from 'discord.js'
 import Robot from '..'
-import { Logger, Env } from '../utils'
+import { MiddlewareInterface } from '../interfaces'
+import { Middleware } from '../interfaces/decorators'
 import { CommandType, LoggerType } from '../types'
+import { Env, Logger } from '../utils'
 
-class Guard extends Middleware {
-	public async run() {
-		this.on('commandReceived', (message: Message) => {
-			const { content, member, author } = message
+@Middleware({ name: 'Guard' })
+class Guard extends MiddlewareInterface {
+	public async run(message: Message): Promise<void> {
+		const { content, member, author } = message
 
-			const sender: GuildMember = member!
-			const args: string[] = content.split(' ')
-			const commandName = args[0].replace(Env.get('CLIENT_PREFIX'), '')
+		const sender: GuildMember = member!
+		const args: string[] = content.split(' ')
+		const commandName = args[0].replace(Env.get('CLIENT_PREFIX'), '')
 
-			Robot.getCommands()
-				.filter((command: CommandType) => command.tag === commandName || command.alias?.includes(commandName))
-				.forEach(async (command: CommandType) => {
-					const { roles, name } = command
-					await message.delete()
-					if (roles?.length != 0) {
-						if (this.hasRoles(roles!, sender)) {
-							await command.run(message, args.slice(1))
-							await Logger.emit('logger', LoggerType.INFO, `${author.tag} execute command (${name})`, false)
-						} else {
-							await sender.lastMessage!.reply("Vous n'avez pas l'autorisation d'excuter cette commande.")
-							await Logger.emit('logger', LoggerType.ERROR, `${author.tag} not allowed to execute command (${command.name})`)
-						}
-					} else {
+		Robot.getCommands()
+			.filter((command: CommandType) => command.tag === commandName || command.alias?.includes(commandName))
+			.forEach(async (command: CommandType) => {
+				const { roles, name } = command
+				await message.delete()
+				if (roles?.length != 0) {
+					if (this.hasRoles(roles!, sender)) {
 						await command.run(message, args.slice(1))
-						await Logger.emit('logger', LoggerType.INFO, `${author.tag} execute command (${name})`, false)
+						await Logger.send(LoggerType.INFO, `${author.tag} execute command (${name})`)
+					} else {
+						await sender.lastMessage!.reply("Vous n'avez pas l'autorisation d'excuter cette commande.")
+						await Logger.send(LoggerType.ERROR, `${author.tag} not allowed to execute command (${command.name})`)
 					}
-				})
-		})
-	}
-
-	public async protect(message: Message) {
-		await this.emit('commandReceived', message)
+				} else {
+					await command.run(message, args.slice(1))
+					await Logger.send(LoggerType.INFO, `${author.tag} execute command (${name})`)
+				}
+			})
 	}
 
 	private hasRoles(roles: Array<string>, sender: GuildMember): boolean {
@@ -44,6 +40,10 @@ class Guard extends Middleware {
 			roles.map((role) => sender.roles.cache.has(role) && (bool = true))
 		}
 		return bool
+	}
+
+	public async protect(message: Message): Promise<void> {
+		await this.emit(this.name!, message)
 	}
 }
 

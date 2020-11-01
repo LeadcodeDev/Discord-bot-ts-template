@@ -1,3 +1,5 @@
 import Event from './Events'
 import Command from './Commands'
-export { Event, Command }
+import Middleware from './Middlewares'
+
+export { Event, Command, Middleware }

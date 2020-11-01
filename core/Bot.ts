@@ -1,12 +1,12 @@
 import { Client } from 'discord.js'
-import { CommandInterface, EventInterface, Middleware } from '../src/interfaces'
+import { CommandInterface, EventInterface, MiddlewareInterface } from '../src/interfaces'
 import Ignitor from './Ignitor'
 import { CommandType, EventType } from './types'
 
 export default class Bot {
 	private commands: Array<CommandType> = []
 	private events: Array<EventInterface> = []
-	private middlewares: Array<Middleware> = []
+	private middlewares: Array<MiddlewareInterface> = []
 	private client: Client
 
 	constructor() {
@@ -60,7 +60,7 @@ export default class Bot {
 	 * @param { Middleware } middleware
 	 * @returns { bot }
 	 */
-	public middleware(middleware: Array<Middleware>): Bot {
+	public middleware(middleware: Array<MiddlewareInterface>): Bot {
 		this.middlewares = middleware
 		return this
 	}
@@ -93,7 +93,7 @@ export default class Bot {
 	 * Call middleware list
 	 * @returns { Middleware }
 	 */
-	public getMiddlewares(): Array<Middleware> {
+	public getMiddlewares(): Array<MiddlewareInterface> {
 		return this.middlewares
 	}
 

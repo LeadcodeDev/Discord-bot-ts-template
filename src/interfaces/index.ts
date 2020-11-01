@@ -1,6 +1,6 @@
 import CommandInterface from './CommandInterface'
 import EventInterface from './EventInterface'
-import Middleware from './Middleware'
+import MiddlewareInterface from './MiddlewareInterface'
 import CoreCommands from './CoreCommands'
 
-export { CommandInterface, EventInterface, Middleware, CoreCommands }
+export { CommandInterface, EventInterface, MiddlewareInterface, CoreCommands }

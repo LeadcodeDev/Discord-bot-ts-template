@@ -1,5 +1,6 @@
 import { Env, Logger } from '../src/utils'
 import Bot from './Bot'
+import { Message } from 'discord.js'
 
 export default class Ignitor {
 	private bot: Bot
@@ -10,17 +11,9 @@ export default class Ignitor {
 	}
 
 	async run() {
-		this.setupEvents()
-		this.setupMiddlewares()
+		this.bot.getEvents().forEach(async ({ name, run }: any) => await this.bot.getClient().on(name, run))
+		this.bot.getMiddlewares().forEach(async (middleware: any) => await middleware.on(middleware.name, (message: Message) => middleware.run(message)))
 		await Logger.run()
 		await this.bot.getClient().login(Env.get('CLIENT_TOKEN'))
-	}
-
-	private setupEvents() {
-		this.bot.getEvents().forEach(async ({ name, run }: any) => await this.bot.getClient().on(name, run))
-	}
-
-	private setupMiddlewares() {
-		this.bot.getMiddlewares().forEach(async (middleware) => await middleware.run())
 	}
 }
