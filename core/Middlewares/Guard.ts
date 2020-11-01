@@ -1,13 +1,11 @@
 import { GuildMember, Message } from 'discord.js'
-import Robot from '..'
-import { MiddlewareInterface } from '../interfaces'
-import { Middleware } from '../interfaces/decorators'
-import { CommandType, LoggerType } from '../types'
-import { Env, Logger } from '../utils'
+import Robot from '../../src/'
+import { CommandType, LoggerType } from '../../src/types'
+import { Env, Logger } from '../../src/utils'
+import { GuardInterface } from '../interfaces'
 
-@Middleware({ name: 'Guard' })
-class Guard extends MiddlewareInterface {
-	public async run(message: Message): Promise<void> {
+class Guard implements GuardInterface {
+	public async protect(message: Message): Promise<void> {
 		const { content, member, author } = message
 
 		const sender: GuildMember = member!
@@ -40,10 +38,6 @@ class Guard extends MiddlewareInterface {
 			roles.map((role) => sender.roles.cache.has(role) && (bool = true))
 		}
 		return bool
-	}
-
-	public async protect(message: Message): Promise<void> {
-		await this.emit(this.name!, message)
 	}
 }
 

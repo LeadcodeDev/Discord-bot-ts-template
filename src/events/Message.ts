@@ -1,6 +1,6 @@
 import { Message } from 'discord.js'
 import { EventInterface } from '../interfaces'
-import { Guard } from '../middlewares'
+import { Guard } from '../../core/Middlewares'
 import { EventList } from '../types'
 import { Event } from './../interfaces/decorators'
 

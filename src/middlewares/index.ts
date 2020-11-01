@@ -1,3 +1,1 @@
-import Guard from './Guard'
-
-export { Guard }
+export {}
