@@ -1,11 +1,8 @@
 import chalk from 'chalk'
 import moment from 'moment'
-import { MiddlewareInterface } from '../interfaces'
-import { Middleware } from '../interfaces/decorators'
 import { LoggerType } from '../types'
 import Env from './Env'
 
-@Middleware({ name: 'Logger' })
 class Logger {
 	constructor() {
 		moment.locale(Env.get('DEFAULT_TIMEZONE'))

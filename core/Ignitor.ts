@@ -1,7 +1,8 @@
 import { Env, Logger } from '../src/utils'
 import Bot from './Bot'
 import { Message } from 'discord.js'
-import { LoggerType } from '../src/types'
+import Lifecycle from './Middlewares/Lifecycle'
+import { Hooks } from '../src/types'
 
 export default class Ignitor {
 	private bot: Bot
@@ -13,8 +14,9 @@ export default class Ignitor {
 
 	async run() {
 		this.bot.getEvents().forEach(async ({ name, run }: any) => await this.bot.getClient().on(name, run))
-		this.bot.getMiddlewares().forEach(async (middleware: any) => await middleware.on(middleware.name, (message: Message) => middleware.run(message)))
-		await Logger.send(LoggerType.INFO, 'Application is logged')
+		this.bot.getMiddlewares().forEach(async (middleware: any) => await Lifecycle.on(middleware.lifecycle, (params?: any) => middleware.run(params)))
+		Lifecycle.emit(Hooks.BEFORE_START)
 		await this.bot.getClient().login(Env.get('CLIENT_TOKEN'))
+		Lifecycle.emit(Hooks.AFTER_START)
 	}
 }

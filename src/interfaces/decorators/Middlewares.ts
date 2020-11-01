@@ -1,11 +1,12 @@
-import { Message } from 'discord.js'
+import { Hooks } from '../../types'
+
 type Context = {
-	name: string
+	lifecycle: Hooks
 }
 
-export default function Middleware({ name }: Context) {
+export default function Middleware({ lifecycle }: Context) {
 	return function (constructor: Function) {
-		constructor.prototype.name = name
+		constructor.prototype.lifecycle = lifecycle
 		constructor.prototype.execute = (params: any) => constructor.prototype.emit(name, params)
 	}
 }

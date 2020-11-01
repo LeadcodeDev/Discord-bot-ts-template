@@ -1,8 +1,9 @@
 import { GuildMember, Message } from 'discord.js'
 import Robot from '../../src/'
-import { CommandType, LoggerType } from '../../src/types'
+import { CommandType, Hooks, LoggerType } from '../../src/types'
 import { Env, Logger } from '../../src/utils'
 import { GuardInterface } from '../interfaces'
+import Lifecycle from './Lifecycle'
 
 class Guard implements GuardInterface {
 	public async protect(message: Message): Promise<void> {
@@ -29,6 +30,12 @@ class Guard implements GuardInterface {
 					await command.run(message, args.slice(1))
 					await Logger.send(LoggerType.INFO, `${author.tag} execute command (${name})`)
 				}
+				Lifecycle.emit(Hooks.COMMAND_RECEIVED, {
+					commandName: name,
+					commandRoles: roles,
+					sender: author,
+					allowed: this.hasRoles(roles!, sender),
+				})
 			})
 	}
 
