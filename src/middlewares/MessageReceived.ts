@@ -1,12 +1,12 @@
 import { Middleware } from '../interfaces/decorators'
 import { MiddlewareInterface } from '../interfaces'
-import { CommandReceived, Hooks } from '../types'
+import { MessageReceived, Hooks } from '../types'
 
-@Middleware({ lifecycle: Hooks.COMMAND_RECEIVED })
-class MessageReceived extends MiddlewareInterface {
-	public async run({ commandName, commandRoles, sender, allowed }: CommandReceived) {
-		console.log('Received command', { commandName, commandRoles, sender, allowed })
+@Middleware({ lifecycle: Hooks.MESSAGE_RECEIVED })
+class test extends MiddlewareInterface {
+	public async run({ message }: MessageReceived) {
+		console.log('Received', message)
 	}
 }
 
-export default new MessageReceived()
+export default new test()

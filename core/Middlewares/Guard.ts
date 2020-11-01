@@ -37,6 +37,8 @@ class Guard implements GuardInterface {
 					allowed: this.hasRoles(roles!, sender),
 				})
 			})
+
+		Lifecycle.emit(Hooks.MESSAGE_RECEIVED, { message })
 	}
 
 	private hasRoles(roles: Array<string>, sender: GuildMember): boolean {
