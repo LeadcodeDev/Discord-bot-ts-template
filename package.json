@@ -30,7 +30,7 @@
 	},
 	"_moduleAliases": {
 		"App": "build/src/",
-		"Core": "build/core/",
-		"Core/api": "build/core/enums"
+		"Core/api": "build/core/enums/",
+		"Core": "build/core/"
 	}
 }

@@ -43,8 +43,8 @@
 		"baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
 		"paths": {
 			"App/*": ["src/*"],
-			"Core/*": ["core/*"],
-			"Core/api*": ["core/enums/*"]
+			"Core/api/*": ["core/enums/*"],
+			"Core/*": ["core/*"]
 		},
 		"rootDirs": ["./src", "./core"] /* List of root folders whose combined content represents the structure of the project at runtime. */,
 		// "typeRoots": [],                       /* List of folders to include type definitions from. */
