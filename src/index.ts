@@ -1,7 +1,7 @@
 import 'module-alias/register'
-import Bot from '../core/Bot'
-import { Example, Help } from './commands'
-import { Ready , Message} from './events'
+import Bot from 'Core/Bot'
+import { Example, Help } from 'App/commands'
+import { Ready , Message} from 'App/events'
 
 const Robot = new Bot()
 
