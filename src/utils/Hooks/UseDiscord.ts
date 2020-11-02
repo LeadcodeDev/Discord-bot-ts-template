@@ -1,4 +1,4 @@
-import { Channel, TextChannel } from 'discord.js'
+import { Channel, Message, TextChannel } from 'discord.js'
 import { Logger } from '..'
 import Robot from '../..'
 import { LoggerType, UseChannels } from '../../types'
@@ -34,15 +34,26 @@ function useChannels({ truncate }: UseChannels): Array<Channel | any> {
  *
  * @returns Channel
  */
-async function useChannel(id: string): Promise<TextChannel | undefined> {
+function useChannel(id: string): TextChannel | undefined {
 	if (!id) {
-		await Logger.send(LoggerType.ERROR, `Please select channel ID`)
+		Logger.send(LoggerType.ERROR, `Please select channel ID`)
 		return undefined
 	}
 	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
 }
 
-function useMessages() {
+/**
+ *	Recovery of all messages
+ * @example
+ * import { useMessages } from '../utils/Hooks'
+ * const MyMessages = useMessages()
+ *
+ * console.log(MyMessages)
+ * // Return messages from discord guild
+ *
+ * @returns Channel
+ */
+function useMessages(): Array<Message> {
 	let messagesList: Array<any> = []
 	Robot.getClient().channels.cache.forEach((channel) => {
 		if (channel instanceof TextChannel) {
