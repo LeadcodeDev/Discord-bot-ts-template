@@ -1,7 +1,7 @@
-import { EventInterface } from '../interfaces'
-import { Guard } from '../../core/Middlewares'
-import { EventList } from '../types'
-import { Event } from './../interfaces/decorators'
+import { EventInterface } from '../../core/interfaces'
+import { Guard } from '../../core/middlewares'
+import { EventList } from '../../core/types'
+import { Event } from '../../core/decorators'
 import { Message } from 'discord.js'
 
 @Event({ type: EventList.MESSAGE })

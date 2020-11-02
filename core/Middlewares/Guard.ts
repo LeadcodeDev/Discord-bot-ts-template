@@ -1,7 +1,8 @@
 import { GuildMember, Message } from 'discord.js'
 import Robot from '../../src/'
 import { CommandType, Hooks, LoggerType } from '../../src/types'
-import { Env, Logger } from '../../src/utils'
+import { Env } from '../../src/utils'
+import Logger from '../utils/Logger'
 import { GuardInterface } from '../interfaces'
 import Lifecycle from './Lifecycle'
 

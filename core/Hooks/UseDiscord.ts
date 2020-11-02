@@ -1,7 +1,7 @@
 import { Channel, Message, TextChannel } from 'discord.js'
-import { Logger } from '..'
-import Robot from '../..'
-import { LoggerType, UseChannels } from '../../types'
+import { Logger } from '../utils'
+import Robot from '../../src'
+import { LoggerType, UseChannels } from '../types'
 
 /**
  *	Recovery of all channels
@@ -17,7 +17,7 @@ import { LoggerType, UseChannels } from '../../types'
  */
 function useChannels({ truncate }: UseChannels): Array<Channel | any> {
 	let channels: Array<any> = []
-	Robot.getClient().channels.cache.forEach((channel) => {
+	Robot.getClient().channels.cache.forEach((channel: Channel) => {
 		truncate ? (channels = [...channels, { id: channel.id, type: channel.type }]) : (channels = [...channels, channel])
 	})
 	return channels

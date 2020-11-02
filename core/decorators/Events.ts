@@ -1,4 +1,4 @@
-import { EventList } from '../../types'
+import { EventList } from '../types'
 
 type Context = {
 	type: EventList

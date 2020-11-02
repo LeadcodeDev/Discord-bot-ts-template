@@ -1,4 +1,4 @@
-import { Env, Logger } from '../src/utils'
+import { Env } from './utils'
 import Bot from './Bot'
 import { Message } from 'discord.js'
 import Lifecycle from './Middlewares/Lifecycle'

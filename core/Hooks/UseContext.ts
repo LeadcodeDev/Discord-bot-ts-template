@@ -1,5 +1,5 @@
 import { Client } from 'discord.js'
-import Robot from '../..'
+import Robot from '../../src'
 
 /**
  *	Get Bot unstance

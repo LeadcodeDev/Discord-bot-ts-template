@@ -1,7 +1,7 @@
 import { Message, MessageEmbed } from 'discord.js'
 import Bot from '../'
-import { CommandInterface } from '../interfaces'
-import { Command } from '../interfaces/decorators'
+import { CommandInterface } from '../../core/interfaces'
+import { Command } from '../../core/decorators'
 import { Env, Roles } from '../utils'
 
 @Command({ name: 'Help', description: 'List all registered commands', tag: 'help', roles: [Roles.EXAMPLE] })

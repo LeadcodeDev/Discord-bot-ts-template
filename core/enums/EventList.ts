@@ -1,4 +1,4 @@
-enum Events {
+enum EventsList {
 	EXAMPLE = 'Exanple of event',
 	CHANNEL_CREATE = 'channelCreate',
 	CHANNEL_DELETE = 'channelDelete',
@@ -45,4 +45,4 @@ enum Events {
 	WARN = 'warn',
 }
 
-export default Events
+export default EventsList
