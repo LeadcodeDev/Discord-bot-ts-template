@@ -1,6 +1,6 @@
-import Bot from 'App/index'
 import { Roles } from 'App/Utils'
 import { Command } from 'Core/decorators'
+import { useClient, useCommands } from 'Core/hooks'
 import { CommandInterface } from 'Core/interfaces'
 import { Env } from 'Core/utils'
 import { Message, MessageEmbed } from 'discord.js'
@@ -12,15 +12,17 @@ class Help implements CommandInterface {
 	}
 
 	private makeEmbed(message: Message): MessageEmbed {
-		let embed = new MessageEmbed()
-		Bot.getCommands().forEach((command: any) => {
-			const { name, description, tag, roles } = command
-			embed
-				.setDescription(`Here are the commands available for the bot ${name}`)
-				.addField(`${name} (${Env.get('CLIENT_PREFIX')}${tag})`, `\n${description}\n__Required roles :__ ${this.fetchRoles(message, roles).join(', ')}`, true)
-				.setTitle('Commands list')
-				.setFooter(Bot.getClient().user!.username, Bot.getClient().user!.displayAvatarURL())
-				.setThumbnail(Bot.getClient().user!.displayAvatarURL())
+		const commands = useCommands()
+		const { user } = useClient()
+		const embed = new MessageEmbed({
+			title: 'Commands list',
+			description: `Here are the commands available for the bot ${user!.username}`,
+			footer: { text: user!.username, iconURL: user!.displayAvatarURL() },
+			thumbnail: { url: user!.displayAvatarURL() },
+		})
+
+		commands.forEach((command: any) => {
+			embed.addField(`${command.name} (${Env.get('CLIENT_PREFIX')}${command.tag})`, `\n${command.description}\n__Required roles :__ ${this.fetchRoles(message, command.roles).join(', ')}`)
 		})
 		return embed
 	}
@@ -33,9 +35,8 @@ class Help implements CommandInterface {
 				element.push(r.charAt(0).toUpperCase() + r.slice(1))
 			})
 			return element
-		} else {
-			return ['none']
 		}
+		return []
 	}
 }
 
