@@ -1,25 +1,21 @@
-import { TextChannel } from 'discord.js'
+import { Channel, TextChannel } from 'discord.js'
 import { Logger } from '..'
 import Robot from '../..'
-import { LoggerType } from '../../types'
+import { LoggerType, UseChannels } from '../../types'
 
 /**
  *	Recovery of all channels
  * @example
- * // Import hook here
- * import { useChannel } from '../utils'
+ * import { useChannels } from '../utils/Hooks'
+ * const MyChannels = useChannels(true)
  *
- * // Using
- * const { channels } = useChannel()
- * const MyChannels = channels(true)
- *
- * // Return my channels from discord guild
  * console.log(MyChannels)
+ * // Return my channels from discord guild
  *
  * @param truncate Default to false
- * @returns Channels
+ * @returns { Channels | undefined }
  */
-function useChannels(truncate?: boolean): Array<any> {
+function useChannels({ truncate }: UseChannels): Array<Channel | any> {
 	let channels: Array<any> = []
 	Robot.getClient().channels.cache.forEach((channel) => {
 		truncate ? (channels = [...channels, { id: channel.id, type: channel.type }]) : (channels = [...channels, channel])
