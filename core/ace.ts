@@ -5,9 +5,9 @@ const args = props.split(',')
 if (commandName == 'make:command') {
 	if (args[0] != 'undefined') {
 		const templateDir = process.cwd() + '/core/template/command'
-		const indexDir = process.cwd() + '/src/commands/index.ts'
-		const commandDir = process.cwd() + '/src/commands'
-		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/commands/${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
+		const indexDir = process.cwd() + '/src/Commands/index.ts'
+		const commandDir = process.cwd() + '/src/Commands'
+		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/Commands/${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, commandDir)
 	}
 }
@@ -15,18 +15,18 @@ if (commandName == 'make:command') {
 if (commandName == 'make:event') {
 	if (args[0] != 'undefined') {
 		const templateDir = process.cwd() + '/core/template/event'
-		const indexDir = process.cwd() + '/src/events/index.ts'
-		const eventDir = process.cwd() + '/src/events'
-		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/events${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
+		const indexDir = process.cwd() + '/src/Events/index.ts'
+		const eventDir = process.cwd() + '/src/Events'
+		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/Events${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, eventDir, args[0])
 	}
 }
 if (commandName == 'make:middleware') {
 	if (args[0] != 'undefined') {
 		const templateDir = process.cwd() + '/core/template/middleware'
-		const indexDir = process.cwd() + '/src/middlewares/index.ts'
-		const eventDir = process.cwd() + '/src/middlewares'
-		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/middlewares/${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
+		const indexDir = process.cwd() + '/src/Middlewares/index.ts'
+		const eventDir = process.cwd() + '/src/Middlewares'
+		const imp = Buffer.from(`import ${args[0].charAt(0).toUpperCase() + args[0].slice(1)} from 'App/Middlewares/${args[0].charAt(0).toUpperCase() + args[0].slice(1)}'\n`)
 		makeFile(indexDir, imp, templateDir, eventDir, args[0])
 	}
 }

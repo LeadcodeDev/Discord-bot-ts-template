@@ -1,4 +1,4 @@
-import Help from 'App/commands/Help'
-import Example from 'App/commands/Example'
+import Help from 'App/Commands/Help'
+import Example from 'App/Commands/Example'
 
 export { Example, Help }

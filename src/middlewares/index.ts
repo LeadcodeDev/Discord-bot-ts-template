@@ -1,3 +1,3 @@
-import Example from 'App/middlewares/Example'
+import Example from 'App/Middlewares/Example'
 
 export { Example }

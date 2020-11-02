@@ -1,4 +1,4 @@
-import Events from 'Core/api/Events'
+import Events from 'Core/api/events'
 import { Event } from 'Core/decorators'
 import { EventInterface } from 'Core/interfaces'
 import { LoggerType } from 'Core/types'
