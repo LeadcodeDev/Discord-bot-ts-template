@@ -1,7 +1,8 @@
 import Robot from 'App/index'
+import LoggerList from 'Core/api/logger'
 import { GuardInterface } from 'Core/interfaces'
 import Lifecycle from 'Core/middlewares/Lifecycle'
-import { CommandType, Hooks, LoggerType } from 'Core/types'
+import { CommandType, Hooks } from 'Core/types'
 import { Env } from 'Core/utils'
 import Logger from 'Core/utils/Logger'
 import { GuildMember, Message } from 'discord.js'
@@ -22,14 +23,14 @@ class Guard implements GuardInterface {
 				if (roles?.length != 0) {
 					if (this.hasRoles(roles!, sender)) {
 						await command.run(message, args.slice(1))
-						await Logger.send(LoggerType.INFO, `${author.tag} execute command (${name})`)
+						await Logger.send(LoggerList.INFO, `${author.tag} execute command (${name})`)
 					} else {
 						await sender.lastMessage!.reply("Vous n'avez pas l'autorisation d'excuter cette commande.")
-						await Logger.send(LoggerType.ERROR, `${author.tag} not allowed to execute command (${command.name})`)
+						await Logger.send(LoggerList.ERROR, `${author.tag} not allowed to execute command (${command.name})`)
 					}
 				} else {
 					await command.run(message, args.slice(1))
-					await Logger.send(LoggerType.INFO, `${author.tag} execute command (${name})`)
+					await Logger.send(LoggerList.INFO, `${author.tag} execute command (${name})`)
 				}
 				Lifecycle.emit(Hooks.COMMAND_RECEIVED, {
 					commandName: name,

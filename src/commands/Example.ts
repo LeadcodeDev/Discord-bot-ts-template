@@ -1,4 +1,4 @@
-import { Roles } from 'App/utils'
+import { Roles } from 'App/Utils'
 import { Command } from 'Core/decorators'
 import { CommandInterface } from 'Core/interfaces'
 import { Message } from 'discord.js'

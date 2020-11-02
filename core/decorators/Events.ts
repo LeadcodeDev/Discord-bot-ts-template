@@ -1,4 +1,4 @@
-import { EventList } from 'Core/types'
+import EventList from 'Core/api/events'
 
 type Context = {
 	type: EventList

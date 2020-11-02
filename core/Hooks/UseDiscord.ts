@@ -1,5 +1,6 @@
 import Robot from 'App/index'
-import { LoggerType, UseChannels } from 'Core/types'
+import LoggerList from 'Core/api/logger'
+import { UseChannels } from 'Core/types'
 import { Logger } from 'Core/utils'
 import { Channel, Message, TextChannel } from 'discord.js'
 
@@ -36,7 +37,7 @@ function useChannels({ truncate }: UseChannels): Array<Channel | any> {
  */
 function useChannel(id: string): TextChannel | undefined {
 	if (!id) {
-		Logger.send(LoggerType.ERROR, `Please select channel ID`)
+		Logger.send(LoggerList.ERROR, `Please select channel ID`)
 		return undefined
 	}
 	return Robot.getClient().channels.cache.find((channel: any) => channel.id === id) as TextChannel
