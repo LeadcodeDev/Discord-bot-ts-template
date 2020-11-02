@@ -1,4 +1,4 @@
-import Roles from 'App/utils/Roles'
-import Channels from 'App/utils/Channels'
+import Roles from 'App/Utils/Roles'
+import Channels from 'App/Utils/Channels'
 
 export { Roles, Channels }
