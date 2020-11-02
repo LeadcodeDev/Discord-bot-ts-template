@@ -1,4 +1,4 @@
-import { Roles } from '../../src/utils'
+import { Roles } from 'App/utils'
 import { Message } from 'discord.js'
 
 type CommandType = {

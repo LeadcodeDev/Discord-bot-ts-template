@@ -1,10 +1,10 @@
+import Robot from 'App/index'
+import { GuardInterface } from 'Core/interfaces'
+import Lifecycle from 'Core/middlewares/Lifecycle'
+import { CommandType, Hooks, LoggerType } from 'Core/types'
+import { Env } from 'Core/utils'
+import Logger from 'Core/utils/Logger'
 import { GuildMember, Message } from 'discord.js'
-import Robot from '../../src/'
-import { CommandType, Hooks, LoggerType } from '../../src/types'
-import { Env } from '../../src/utils'
-import Logger from '../utils/Logger'
-import { GuardInterface } from '../interfaces'
-import Lifecycle from './Lifecycle'
 
 class Guard implements GuardInterface {
 	public async protect(message: Message): Promise<void> {

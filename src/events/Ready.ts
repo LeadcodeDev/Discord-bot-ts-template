@@ -1,8 +1,8 @@
-import Logger from '../../core/utils/Logger'
-import { EventInterface } from '../../core/interfaces'
-import { EventList, LoggerType } from '../../core/types'
-import { Env } from '../../core/utils'
-import { Event } from '../decorators'
+import { Event } from 'Core/decorators'
+import { EventInterface } from 'Core/interfaces'
+import { EventList, LoggerType } from 'Core/types'
+import { Env } from 'Core/utils'
+import Logger from 'Core/utils/Logger'
 
 @Event({ type: EventList.READY })
 class ReadyEvent implements EventInterface {

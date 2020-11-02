@@ -1,4 +1,4 @@
-import { Roles } from '../../src/utils'
+import { Roles } from 'App/utils'
 
 type Context = {
 	name: string

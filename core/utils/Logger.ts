@@ -1,7 +1,7 @@
 import chalk from 'chalk'
+import { LoggerType } from 'Core/types'
+import Env from 'Core/utils/Env'
 import moment from 'moment'
-import { LoggerType } from '../types'
-import Env from './Env'
 
 class Logger {
 	constructor() {

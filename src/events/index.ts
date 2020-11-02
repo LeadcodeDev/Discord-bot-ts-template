@@ -1,4 +1,4 @@
-import Ready from './Ready'
-import Message from './Message'
+import Ready from 'App/events/Ready'
+import Message from 'App/events/Message'
 
 export { Ready, Message }

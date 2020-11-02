@@ -1,7 +1,7 @@
+import Ignitor from 'Core/Ignitor'
+import { CommandInterface, EventInterface, MiddlewareInterface } from 'Core/interfaces'
+import { CommandType, EventType } from 'Core/types'
 import { Client } from 'discord.js'
-import { CommandInterface, EventInterface, MiddlewareInterface } from '../src/interfaces'
-import Ignitor from './Ignitor'
-import { CommandType, EventType } from './types'
 
 export default class Bot {
 	private commands: Array<CommandType> = []

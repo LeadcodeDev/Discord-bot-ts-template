@@ -1,4 +1,4 @@
-import { Hooks } from '../types'
+import { Hooks } from 'Core/types'
 
 type Context = {
 	lifecycle: Hooks

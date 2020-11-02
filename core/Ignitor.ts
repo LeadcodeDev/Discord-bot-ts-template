@@ -1,8 +1,7 @@
-import { Env } from './utils'
-import Bot from './Bot'
-import { Message } from 'discord.js'
-import Lifecycle from './Middlewares/Lifecycle'
-import { Hooks } from '../src/types'
+import Bot from 'Core/Bot'
+import Lifecycle from 'Core/middlewares/Lifecycle'
+import { Hooks } from 'Core/types'
+import { Env } from 'Core/utils'
 
 export default class Ignitor {
 	private bot: Bot

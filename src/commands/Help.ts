@@ -1,8 +1,9 @@
+import { Command } from 'Core/decorators'
+import { CommandInterface } from 'Core/interfaces'
+import { Env } from 'Core/utils'
 import { Message, MessageEmbed } from 'discord.js'
 import Bot from '../'
-import { CommandInterface } from '../../core/interfaces'
-import { Command } from '../../core/decorators'
-import { Env, Roles } from '../utils'
+import { Roles } from '../utils'
 
 @Command({ name: 'Help', description: 'List all registered commands', tag: 'help', roles: [Roles.EXAMPLE] })
 class Help implements CommandInterface {

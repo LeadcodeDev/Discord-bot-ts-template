@@ -1,7 +1,7 @@
+import { Roles } from 'App/utils'
+import { Command } from 'Core/decorators'
+import { CommandInterface } from 'Core/interfaces'
 import { Message } from 'discord.js'
-import { CommandInterface } from '../../core/interfaces'
-import { Command } from '../../core/decorators'
-import { Roles } from '../utils'
 
 @Command({ name: 'Example command', description: 'Example of command', tag: 'example', roles: [Roles.EXAMPLE] })
 class Example implements CommandInterface {

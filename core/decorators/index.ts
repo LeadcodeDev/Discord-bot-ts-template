@@ -1,5 +1,5 @@
-import Event from './Events'
-import Command from './Commands'
-import Middleware from './Middlewares'
+import Command from 'Core/decorators/Commands'
+import Event from 'Core/decorators/Events'
+import Middleware from 'Core/decorators/Middlewares'
 
 export { Event, Command, Middleware }

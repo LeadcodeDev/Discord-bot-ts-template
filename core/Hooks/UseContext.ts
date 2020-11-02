@@ -1,10 +1,10 @@
+import Robot from 'App/index'
 import { Client } from 'discord.js'
-import Robot from '../../src'
 
 /**
  *	Get Bot unstance
  * @example
- * import { useClient } from '../utils/Hooks'
+ * import { useClient } from 'Core/Hooks'
  * const client = useClient()
  * @returns Client
  */

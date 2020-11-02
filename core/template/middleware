@@ -1,6 +1,6 @@
-import { Middleware } from '../interfaces/decorators'
-import { MiddlewareInterface } from '../interfaces'
-import { MessageReceived, Hooks } from '../types'
+import { Middleware } from 'Core/interfaces/decorators'
+import { MiddlewareInterface } from 'Core/interfaces'
+import { Hooks } from 'Core/api'
 
 @Middleware({ lifecycle: Hooks.EXAMPLE })
 class ~Example extends MiddlewareInterface {

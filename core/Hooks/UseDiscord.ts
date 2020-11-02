@@ -1,12 +1,12 @@
+import Robot from 'App/index'
+import { LoggerType, UseChannels } from 'Core/types'
+import { Logger } from 'Core/utils'
 import { Channel, Message, TextChannel } from 'discord.js'
-import { Logger } from '../utils'
-import Robot from '../../src'
-import { LoggerType, UseChannels } from '../types'
 
 /**
  *	Recovery of all channels
  * @example
- * import { useChannels } from '../utils/Hooks'
+ * import { useChannels } from 'Core/hooks'
  * const MyChannels = useChannels(true)
  *
  * console.log(MyChannels)
@@ -26,7 +26,7 @@ function useChannels({ truncate }: UseChannels): Array<Channel | any> {
 /**
  *	Recovery of all channels
  * @example
- * import { useChannel } from '../utils/Hooks'
+ * import { useChannel } from 'Core/Hooks'
  * const MyChannel = useChannel('583050048766476355')
  *
  * console.log(MyChannel)
@@ -45,7 +45,7 @@ function useChannel(id: string): TextChannel | undefined {
 /**
  *	Recovery of all messages
  * @example
- * import { useMessages } from '../utils/Hooks'
+ * import { useMessages } from 'Core/Hooks'
  * const MyMessages = useMessages()
  *
  * console.log(MyMessages)

@@ -1,3 +1,4 @@
+import 'module-alias/register'
 import Bot from '../core/Bot'
 import { Example, Help } from './commands'
 import { Ready , Message} from './events'
