@@ -4,7 +4,7 @@ import { MessageReceived, Hooks } from '../types'
 
 @Middleware({ lifecycle: Hooks.EXAMPLE })
 class ~Example extends MiddlewareInterface {
-	public async run() {
+	public async run(): Promise<void> {
 		// Your code here
 	}
 }
