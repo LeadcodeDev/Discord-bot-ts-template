@@ -1,5 +1,4 @@
-import { EventInterface, Types } from '../interfaces'
-import { Logger, Env } from '../utils'
+import { EventInterface } from '../interfaces'
 import { EventList } from '../types'
 import { Event } from './../interfaces/decorators'
 

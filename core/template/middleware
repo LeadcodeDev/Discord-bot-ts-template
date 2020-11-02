@@ -2,7 +2,7 @@ import { Middleware } from '../interfaces/decorators'
 import { MiddlewareInterface } from '../interfaces'
 import { MessageReceived, Hooks } from '../types'
 
-@Middleware({ lifecycle: Hooks.MESSAGE_RECEIVED })
+@Middleware({ lifecycle: Hooks.EXAMPLE })
 class ~Example extends MiddlewareInterface {
 	public async run() {
 		// Your code here
