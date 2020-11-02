@@ -1,4 +1,3 @@
-import * as UseHooks from 'src\types\UseHooks'
 import LoggerType from './LoggerType'
 import CommandType from './CommandType'
 import EventType from './EventType'
