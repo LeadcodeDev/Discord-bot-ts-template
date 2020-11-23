@@ -8,7 +8,7 @@ const Robot = new Bot()
 Robot
     .registerCommands([Example, Help])
     .registerEvents([Ready, Message])
-    .middleware([])
+    .registerMiddlewares([])
     .initialize()
     
 export default Robot

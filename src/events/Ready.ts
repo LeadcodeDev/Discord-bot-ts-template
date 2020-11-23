@@ -5,9 +5,8 @@ import LoggerList from 'Core/api/logger'
 import { Env, Logger } from 'Core/utils'
 
 @Event({ type: Events.READY })
-class ReadyEvent implements EventInterface {
+export default class ReadyEvent implements EventInterface {
 	public async run() {
 		await Logger.send(LoggerList.INFO, `${Env.get('CLIENT_NAME')} is ready`)
 	}
 }
-export default new ReadyEvent()

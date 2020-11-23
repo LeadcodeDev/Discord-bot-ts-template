@@ -3,10 +3,10 @@ import { EventInterface } from 'Core/interfaces'
 import { Event } from 'Core/decorators'
 
 @Event({ type: Events.EXAMPLE })
-class ~Example implements EventInterface {
+export default class ~Example implements EventInterface {
 	public async run(): Promise<void> {
 		// Your code here
 	}
 }
 
-export default new ~Example()
+

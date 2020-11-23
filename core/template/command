@@ -4,10 +4,10 @@ import { Command } from 'Core/decorators'
 import { Roles } from 'App/utils'
 
 @Command({ name: 'Command example', description: 'Describe your command', tag: '~example', roles: [Roles.EXAMPLE] })
-class ~Example implements CommandInterface {
+export default class ~Example implements CommandInterface {
 	public async run(msg: Message, args: string[]): Promise<void> {
 		// Your code here
 	}
 }
 
-export default new ~Example()
+

@@ -28,8 +28,8 @@ export default class Bot {
 	 * @param { Commands } commands
 	 * @returns { bot }
 	 */
-	public registerCommands(commands: Array<CommandInterface>): Bot {
-		commands.forEach((command: any) => this.commands.push(command))
+	public registerCommands(commands: Array<any>): Bot {
+		commands.forEach((command: any) => this.commands.push(new command()))
 		return this
 	}
 
@@ -38,8 +38,8 @@ export default class Bot {
 	 * @param { Event } event
 	 * @returns { bot }
 	 */
-	public registerEvent(event: EventType): Bot {
-		this.events.push(event)
+	public registerEvent(event: any): Bot {
+		this.events.push(new event())
 		return this
 	}
 
@@ -48,10 +48,8 @@ export default class Bot {
 	 * @param { Events } event
 	 * @returns { bot }
 	 */
-	public registerEvents(events: Array<EventInterface>): Bot {
-		events.forEach((event) => {
-			this.events.push(event)
-		})
+	public registerEvents(events: Array<any>): Bot {
+		events.forEach((event) => this.events.push(new event()))
 		return this
 	}
 
@@ -60,8 +58,8 @@ export default class Bot {
 	 * @param { Middleware } middleware
 	 * @returns { bot }
 	 */
-	public middleware(middleware: Array<MiddlewareInterface>): Bot {
-		this.middlewares = middleware
+	public registerMiddlewares(middleware: Array<any>): Bot {
+		middleware.forEach((middleware) => this.middlewares.push(new middleware()))
 		return this
 	}
 

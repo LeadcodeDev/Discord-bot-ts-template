@@ -6,7 +6,7 @@ import { Env } from 'Core/utils'
 import { Message, MessageEmbed } from 'discord.js'
 
 @Command({ name: 'Help', description: 'List all registered commands', tag: 'help', roles: [Roles.EXAMPLE] })
-class Help implements CommandInterface {
+export default class Help implements CommandInterface {
 	public async run(msg: Message, args: string[]): Promise<void> {
 		await msg.reply(this.makeEmbed(msg))
 	}
@@ -39,5 +39,3 @@ class Help implements CommandInterface {
 		return []
 	}
 }
-
-export default new Help()
