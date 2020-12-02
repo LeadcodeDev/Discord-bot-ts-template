@@ -1,7 +1,7 @@
 {
-	"name": "discord-bot-ts-template",
-	"version": "2.0.0",
-	"main": "index.js",
+	"name": "create-discord-ts-app",
+	"version": "2.0.3",
+	"main": "./build/index.js",
 	"scripts": {
 		"dev": "tsc -w",
 		"start": "SET NODE_ENV=development && nodemon ./build/src/index.js",
@@ -9,12 +9,13 @@
 		"production": "SET NODE_ENV=production && node ./build/src/index.js"
 	},
 	"repository": "git@github.com:LeadcodeDev/Discord-bot-ts-template.git",
-	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
+	"author": "Baptiste Parmantier <baptiste.parmantier.pro@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@discord-ts-app/core": "1.0.14",
 		"axios": "^0.20.0",
 		"chalk": "^4.1.0",
-		"discord.js": "^12.2.0",
+		"discord.js": "^12.5.1",
 		"dotenv": "^8.2.0",
 		"execa": "^4.0.3",
 		"fs": "^0.0.1-security",
@@ -29,8 +30,9 @@
 		"nodemon": "^2.0.4"
 	},
 	"_moduleAliases": {
-		"App": "build/src/",
-		"Core/api": "build/core/enums/",
-		"Core": "build/core/"
+		"App": "build/"
+	},
+	"bin": {
+		"create-discord-ts-app": "build/bin/index.js"
 	}
 }
