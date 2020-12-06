@@ -1,5 +1,5 @@
 import Events from '@discord-ts-app/core/build/enums/events'
-import { Event } from '@discord-ts-app/core/build/decorators'
+import { Event } from '@discord-ts-app/core/build/decorators/class'
 import { EventInterface } from '@discord-ts-app/core/build/interfaces'
 import { Logger, State } from '@discord-ts-app/core/build/utils/Logger'
 import Env from '@discord-ts-app/core/build/utils/Env'

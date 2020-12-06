@@ -1,5 +1,5 @@
 import { Roles } from 'App/Utils'
-import { Command } from '@discord-ts-app/core/build/decorators'
+import { Command } from '@discord-ts-app/core/build/decorators/class'
 import { CommandInterface } from '@discord-ts-app/core/build/interfaces'
 import { Message } from 'discord.js'
 

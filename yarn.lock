@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@discord-ts-app/core@1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@discord-ts-app/core/-/core-1.0.14.tgz#4d34bbdc23f63805ce5bb81cbf00e49d04a68968"
-  integrity sha512-9T3Ltk2DSY/RomFSphGhKXG+Iz/PcgtCC0OMXQqEUN7Gi34sqUDsGlii/GZWlNGig1IebTxuy/91WqX1wz3VLQ==
+"@discord-ts-app/core@^1.0.35":
+  version "1.0.35"
+  resolved "https://registry.yarnpkg.com/@discord-ts-app/core/-/core-1.0.35.tgz#8b11a444046dad82d31abb7921f44546afac0697"
+  integrity sha512-c/QgJgAtceF99yTg142CV94iUdn9b8/+b08gwnvL0cLROoK/1vDqvnk+JyO7FT/hNxpSPPsFReD3tiFgSevzJg==
   dependencies:
     "@types/node" "^14.14.10"
     "@types/ws" "^7.4.0"
