@@ -12,7 +12,7 @@
 	"author": "Baptiste Parmantier <baptiste.parmantier.pro@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@discord-ts-app/core": "^1.0.35",
+		"@discord-ts-app/core": "^1.1.0",
 		"axios": "^0.20.0",
 		"chalk": "^4.1.0",
 		"discord.js": "^12.5.1",
