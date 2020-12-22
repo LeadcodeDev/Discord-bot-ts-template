@@ -1,8 +1,8 @@
 import { Roles } from 'App/Utils'
-import { Command } from '@discord-ts-app/core/build/decorators/class'
-import { useClient, useCommands } from '@discord-ts-app/core/build/hooks'
-import { CommandInterface } from '@discord-ts-app/core/build/interfaces'
-import Env from '@discord-ts-app/core/build/utils/Env'
+import { Command } from '@discord-ts-app/core/build/Decorators/Class'
+import { useClient, useCommands } from '@discord-ts-app/core/build/Hooks'
+import { CommandInterface } from '@discord-ts-app/core/build/Interfaces'
+import Env from '@discord-ts-app/core/build/Utils/Env'
 import { Message, MessageEmbed } from 'discord.js'
 
 @Command({ name: 'Help', description: 'List all registered commands', tag: 'help', roles: [Roles.EXAMPLE] })

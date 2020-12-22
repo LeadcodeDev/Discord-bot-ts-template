@@ -1,6 +1,5 @@
-import Hooks from '@discord-ts-app/core/build/enums/hooks'
-import { Middleware } from '@discord-ts-app/core/build/decorators/class'
-import { MiddlewareInterface } from '@discord-ts-app/core/build/interfaces'
+import { Middleware, Hooks } from '@discord-ts-app/core/build/Decorators/Class'
+import { MiddlewareInterface } from '@discord-ts-app/core/build/Interfaces'
 
 @Middleware({ lifecycle: Hooks.EXAMPLE })
 export default class Example extends MiddlewareInterface {

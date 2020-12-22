@@ -1,6 +1,5 @@
-import Events from '@discord-ts-app/core/build/enums/events'
-import { Event } from '@discord-ts-app/core/build/decorators/class'
-import { EventInterface } from '@discord-ts-app/core/build/interfaces'
+import { Event, Events } from '@discord-ts-app/core/build/Decorators/Class'
+import { EventInterface } from '@discord-ts-app/core/build/Interfaces'
 import { Guard } from '@discord-ts-app/core/build/Middlewares'
 import { Message } from 'discord.js'
 

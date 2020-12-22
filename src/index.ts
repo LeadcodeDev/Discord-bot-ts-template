@@ -1,8 +1,8 @@
 import 'module-alias/register'
 import Bot from '@discord-ts-app/core/build/Bot'
-import Env from '@discord-ts-app/core/build/utils/Env'
-import { Example, Help } from 'App/commands'
-import { Ready, Message } from 'App/events'
+import Env from '@discord-ts-app/core/build/Utils/Env'
+import { Example, Help } from 'App/Commands'
+import { Ready, Message } from 'App/Events'
 
 Bot
     .registerCommands([Example, Help])
