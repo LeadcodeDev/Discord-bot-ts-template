@@ -4,15 +4,15 @@
 	"main": "./build/index.js",
 	"scripts": {
 		"dev": "tsc -w",
-		"start": "cross-env NODE_ENV=development && nodemon ./build/src/index.js",
+		"start": "cross-env NODE_ENV=development && nodemon ./build/index.js",
 		"build": "tsc",
-		"production": "cross-env NODE_ENV=production && node ./build/src/index.js"
+		"production": "cross-env NODE_ENV=production && node ./build/index.js"
 	},
 	"repository": "git@github.com:LeadcodeDev/Discord-bot-ts-template.git",
 	"author": "Baptiste Parmantier <baptiste.parmantier.pro@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@discord-ts-app/core": "^1.3.2",
+		"@discord-ts-app/core": "^1.3.6",
 		"axios": "^0.21.1",
 		"chalk": "^4.1.0",
 		"cross-env": "^7.0.3",
