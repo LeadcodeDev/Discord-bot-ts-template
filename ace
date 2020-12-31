@@ -1,0 +1,9 @@
+const execa = require('execa')
+
+;(async () => {
+	const args = process.argv
+	const [, , commandName] = args
+	args.splice(0, 3).join(' ')
+	const { stdout } = await execa.node('node_modules/@discord-ts-app/core/build/ace.js', [commandName, args])
+	console.log(stdout)
+})()
