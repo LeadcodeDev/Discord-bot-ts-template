@@ -5,6 +5,7 @@ import { Example, Help } from 'App/Commands'
 import { Ready, Message } from 'App/Events'
 
 Bot
+
     .registerCommands([Example, Help])
     .registerEvents([Ready, Message])
     .registerMiddlewares([])
